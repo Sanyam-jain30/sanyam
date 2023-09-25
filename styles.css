@@ -9,12 +9,14 @@ body{
 }
 
 .navbar{
+    position: relative;
     padding: 0 30px;
     color: #FFF;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: #1A0B2E;
+    z-index: 1;
 }
 
 .navbar a{
@@ -91,13 +93,34 @@ body{
 
 .desc{
     font-family: 'Mooli', sans-serif;
-    max-width: 550px;
+    max-width: 600px;
 }
 
 .desc h2{
     font-family: 'Preahvihear', sans-serif;
     font-size: 2.4rem;
     margin-bottom: 30px;
+}
+
+.visible-icon{
+    font-size: 20px;
+}
+
+.no-highlight{
+    color: #FFF;
+    text-decoration: none;
+}
+
+.profile-img{
+    margin: 10px 0;
+    width: 480px;
+    height: 380px; 
+    background: url("assests/Myself.png"), lightgray -232.478px -1.813px / 181.208% 245.023% no-repeat;
+    border-radius: 41px;
+    box-shadow: 4px 4px 70px 10px rgba(118, 60, 172, 0.50);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 #internship, #achievement, #research{
@@ -201,9 +224,10 @@ body{
 .intern-highlight{
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
 }
 
-.intern-highlight span, .project-highlight{
+.intern-highlight span:not(.material-symbols-outlined), .project-highlight{
     font-family: 'Mooli', sans-serif;
     font-size: 0.8rem;
     padding: 5px 10px;
@@ -211,6 +235,19 @@ body{
     border: 1px solid #693B93;
     background-color: #2C1250;
     margin-left: 15px;
+}
+
+.certificate{
+    width: max-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.certificate p{
+    width: max-content;
+    margin: 0;
+    margin-left: 5px;
 }
 
 #achievement{
@@ -294,7 +331,7 @@ body{
     margin: 10px 0px 0px 0px;
 }
 
-.achievement-desc-content p{
+.achievement-desc-content p:not(.certificate p){
     font-weight: 500;
     font-size: 0.8rem;
     margin: 0;
@@ -302,7 +339,7 @@ body{
     width: 320px;
 }
 
-.achievement-desc-content span{
+.achievement-desc-content span:not(.certificate .material-symbols-outlined){
     font-size: 0.8rem;
     padding: 5px 20px;
     border-radius: 10px;
@@ -451,41 +488,6 @@ body{
     margin-bottom: 40px;
 }
 
-.contact-form{
-    margin: auto;
-    padding: 30px 40px;
-    width: max-content;
-    border-radius: 20px;
-    background: linear-gradient(180deg, #11071F 0%, rgba(17, 7, 31, 0.00) 100%);
-    box-shadow: 0px 4px 20px 8px #3D1B71;
-}
-
-.contact-form input, .contact-form textarea{
-    font-family: 'Mooli', sans-serif;
-    font-size: 1.2rem;
-    width: 450px;
-    margin-bottom: 15px;
-    padding: 10px 20px;
-    color: #FFF;
-    border-radius: 10px;
-    background: #371866;
-    border: none;
-}
-
-.contact-form textarea{
-    resize: none;
-}
-
-.contact-form button{
-    cursor: pointer;
-    border: none;
-    padding: 10px 40px;
-    color: #FFF;
-    font-family: 'Mooli', sans-serif;
-    border-radius: 15px;
-    background: linear-gradient(95deg, #300F5F 0%, rgba(106, 0, 255, 0.00) 100%), linear-gradient(230deg, #300F5F 0%, rgba(106, 0, 255, 0.00) 100%);
-}
-
 ::placeholder{
     color: #FFF;
 }
@@ -536,6 +538,7 @@ body{
 }
 
 .github-code{
+    cursor: pointer;
     width: max-content;
     color: #fff;
     display: flex;
@@ -556,6 +559,7 @@ body{
 }
 
 .github-code-02{
+    cursor: pointer;
     margin-top: 10px;
     width: max-content;
     color: #fff;
@@ -578,4 +582,30 @@ body{
 
 .github-code-02 span{
     color: #FFF;
+}
+
+.contact-details{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.contact-details i{
+    margin-right: 15px;
+}
+
+.contact-detail{
+    cursor: pointer;
+    width: max-content;
+    color: #fff;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-family: 'Mooli', sans-serif;
+    font-size: 1.2rem;
+    padding: 20px 30px;
+    border-radius: 10px;
+    border: 1px solid #693B93;
+    background-color: #2C1250;
 }
