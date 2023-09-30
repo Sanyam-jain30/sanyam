@@ -19,7 +19,7 @@ body{
     z-index: 1;
 }
 
-.navbar a{
+.navbar-side a{
     padding: 10px;
     position: relative;
     color: #FFF;
@@ -27,8 +27,8 @@ body{
     text-decoration: none;
 }
 
-.navbar a::before,
-.navbar a::after {
+.navbar-side a::before,
+.navbar-side a::after {
   content: '';
   height: 14px;
   width: 14px;
@@ -37,7 +37,7 @@ body{
   opacity: 0;
 }
 
-.navbar a::before {
+.navbar-side a::before {
   content: '';
   right: 0;
   top: 0;
@@ -46,7 +46,7 @@ body{
   transform: translate(-100%, 50%);
 }
 
-.navbar a:after {
+.navbar-side a:after {
   content: '';
   left: 0;
   bottom: 0;
@@ -55,17 +55,17 @@ body{
   transform: translate(100%, -50%)
 }
 
-.navbar a:hover:before,
-.navbar a:hover:after{
+.navbar-side a:hover:before,
+.navbar-side a:hover:after{
   transform: translate(0,0);
   opacity: 1;
 }
 
-.navbar a:hover {
+.navbar-side a:hover {
   color: #3DA35D;
 }
 
-.navbar div{
+.navbar-side{
     width: 60%;
     display: flex;
     justify-content: space-between;
@@ -584,28 +584,8 @@ body{
     color: #FFF;
 }
 
-.contact-details{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.contact-details i{
-    margin-right: 15px;
-}
-
-.contact-detail{
-    cursor: pointer;
-    width: max-content;
-    color: #fff;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    font-family: 'Mooli', sans-serif;
-    font-size: 1.2rem;
-    padding: 20px 30px;
-    border-radius: 10px;
-    border: 1px solid #693B93;
-    background-color: #2C1250;
+.profile-icon{
+    width: 2.8rem;
+    height: 2.8rem;
+    margin-right: 1rem;
 }
