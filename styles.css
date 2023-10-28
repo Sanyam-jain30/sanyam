@@ -106,7 +106,7 @@ body{
     font-size: 20px;
 }
 
-.no-highlight{
+.no-highlight, .no-highlight-certificate{
     color: #FFF;
     text-decoration: none;
 }
@@ -227,7 +227,7 @@ body{
     align-items: center;
 }
 
-.intern-highlight span:not(.material-symbols-outlined), .project-highlight{
+.intern-highlight span:not(.material-symbols-outlined), .research-additional .no-highlight-certificate, .project-highlight{
     font-family: 'Mooli', sans-serif;
     font-size: 0.8rem;
     padding: 5px 10px;
@@ -247,7 +247,8 @@ body{
 .certificate p{
     width: max-content;
     margin: 0;
-    margin-left: 5px;
+    font-family: 'Mooli', sans-serif;
+    font-size: 0.9rem;
 }
 
 #achievement{
@@ -341,7 +342,7 @@ body{
 
 .achievement-desc-content span:not(.certificate .material-symbols-outlined){
     font-size: 0.8rem;
-    padding: 5px 20px;
+    padding: 8px 14px;
     border-radius: 10px;
     border: 1px solid #693B93;
     background-color: #2C1250;
@@ -552,7 +553,7 @@ body{
     background-color: #2C1250;
 }
 
-.github-icon{
+.github-icon, .certificate-icon{
     width: 30px;
     height: 30px;
     margin-right: 10px;
