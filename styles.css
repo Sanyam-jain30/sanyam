@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Mooli&family=Preahvihear&display=swap');
 
+:root {
+    color-scheme: dark;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     margin: 0;
     padding: 0;
@@ -471,6 +479,11 @@ body{
 
 .project-img-even{
     margin-right: 10px;
+}
+
+.project-0{
+    background: url('assests/project-DDRF.png');
+    background-size: 100% 100%;
 }
 
 .project-2{
