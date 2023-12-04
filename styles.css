@@ -182,6 +182,10 @@ body{
     flex-wrap: wrap;
 }
 
+.intern-cards{
+    row-gap: 30px;
+}
+
 .intern-card{
     position: relative;
     padding: 10px 15px;
@@ -227,6 +231,7 @@ body{
     max-width: 320px;
     line-height: 1.8rem;
     margin-bottom: 10px;
+    text-align: left;
 }
 
 .intern-highlight{
