@@ -131,13 +131,13 @@ body{
     background-repeat: no-repeat;
 }
 
-#internship, #achievement, #research{
+#internship, #achievement, #research, #grade{
     position: relative;
     color: #FFF;   
     text-align: center;
 }
 
-#internship{
+#grade, #internship{
     margin-top: 50px;
 }
 
@@ -175,18 +175,18 @@ body{
     background: radial-gradient(50% 50% at 50% 50%, #763CAC 0%, rgba(50, 15, 133, 0.00) 100%);
 }
 
-.intern-cards, .achievement-cards, .research-cards{
+.intern-cards, .achievement-cards, .research-cards, .grade-cards{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
 }
 
-.intern-cards{
+.intern-cards, .grade-cards{
     row-gap: 30px;
 }
 
-.intern-card{
+.intern-card, .grade-card{
     position: relative;
     padding: 10px 15px;
     display: flex;
@@ -199,7 +199,11 @@ body{
     border-top: 5px solid #4F228D;
 }
 
-.intern-dur, .project-decision{
+.grade-card{
+    min-width: 400px;
+}
+
+.intern-dur, .project-decision, .grade-dur{
     position: absolute;
     right: 20px;
     top: 10px;
@@ -208,11 +212,11 @@ body{
     box-shadow: 4px 7px 26px 0px rgba(0, 0, 0, 0.12);
 }
 
-.intern-dur:nth-child(odd), .project-decision{
+.intern-dur:nth-child(odd), .project-decision, .grade-dur:nth-child(odd){
     background: linear-gradient(298deg, #130428 -93.07%, #251043 -38.94%, #38126D 5.82%, #261045 62.03%, #190634 92.21%);
 }
 
-.intern-dur:nth-child(even){
+.intern-dur:nth-child(even), .grade-dur:nth-child(even){
     background: linear-gradient(298deg, #130428 -93.07%, #251043 -38.94%, #38126D 5.82%, #261045 62.03%, #190634 92.21%);
 }
 
@@ -222,8 +226,19 @@ body{
     align-items: end;
 }
 
+.grade-title{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 .intern-title img{
     max-height: 230px;
+}
+
+.grade-card img{
+    width: 240px;
 }
 
 .intern-title h2{
@@ -234,13 +249,20 @@ body{
     text-align: left;
 }
 
-.intern-highlight{
+.grade-title h2{
+    margin: 40px 0 0;
+    max-width: 360px;
+    line-height: 1.8rem;
+    text-align: left;
+}
+
+.intern-highlight, .grade-highlight{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
 }
 
-.intern-highlight span:not(.material-symbols-outlined), .research-additional .no-highlight-certificate, .project-highlight{
+.intern-highlight span:not(.material-symbols-outlined), .research-additional .no-highlight-certificate, .project-highlight, .grade-highlight{
     font-family: 'Mooli', sans-serif;
     font-size: 0.8rem;
     padding: 5px 10px;
@@ -248,6 +270,42 @@ body{
     border: 1px solid #693B93;
     background-color: #2C1250;
     margin-left: 15px;
+}
+
+.outer-circle{
+    margin-right: 30px;
+    float: right;
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    background-image: linear-gradient(340deg, transparent 50%, #68349A 50%), linear-gradient(20deg, #68349A 50%, transparent 50%);
+}
+
+.inner-circle{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: #29104D;
+}
+
+.inner-circle span{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: max-content;
+    font-size: 1.1rem;
+    font-weight: bold;
 }
 
 .certificate{
