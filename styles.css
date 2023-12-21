@@ -403,6 +403,10 @@ body{
     margin: 10px 0px 0px 0px;
 }
 
+.achievement-desc-content h4{
+    margin: 10px 0px 0px 0px;
+}
+
 .achievement-desc-content p:not(.certificate p){
     font-weight: 500;
     font-size: 0.8rem;
