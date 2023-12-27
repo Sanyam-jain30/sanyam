@@ -404,7 +404,10 @@ body{
 }
 
 .achievement-desc-content h6{
-    margin: 0px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin: 5px 0;
+    font-family: 'Mooli', sans-serif;
 }
 
 .achievement-desc-content p:not(.certificate p){
