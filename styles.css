@@ -175,7 +175,16 @@ body{
     background: radial-gradient(50% 50% at 50% 50%, #763CAC 0%, rgba(50, 15, 133, 0.00) 100%);
 }
 
-.intern-cards, .achievement-cards, .research-cards, .grade-cards{
+.research-cards{
+    margin: auto;
+    width: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.intern-cards, .achievement-cards, .grade-cards{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -400,7 +409,9 @@ body{
 }
 
 .achievement-desc-content h2{
+    max-width: 320px;
     margin: 10px 0px 0px 0px;
+    line-height: 1.9rem;
 }
 
 .achievement-desc-content h6{
@@ -435,13 +446,16 @@ body{
 .title-project{
     position: relative;
     z-index: -1;
+    margin-bottom: 50px;
 }
 
 .project-cards{
+    margin: auto;
+    width: max-content;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .project-card-odd{
@@ -621,6 +635,14 @@ body{
     display: flex;
     justify-content: start;
     align-items: center;
+}
+
+.more{
+    width: 100%;
+}
+
+.more span{
+    font-size: 1.2rem;
 }
 
 .github-code{
