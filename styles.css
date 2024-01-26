@@ -131,13 +131,13 @@ body{
     background-repeat: no-repeat;
 }
 
-#internship, #achievement, #research, #grade{
+#internship, #achievement, #research, #grade, #work{
     position: relative;
     color: #FFF;   
     text-align: center;
 }
 
-#grade, #internship{
+#grade, #internship, #work{
     margin-top: 50px;
 }
 
@@ -169,6 +169,7 @@ body{
     bottom: 0;
     left: 0;
     right: 0;
+    z-index: -1;
     text-align: center;
     flex-shrink: 0;
     position: absolute;
@@ -360,7 +361,7 @@ body{
     border-top: 5px solid #4F228D;
 }
 
-.achievement-card:nth-child(odd){
+.achievement-card:nth-child(odd), .work-card{
     border-radius: 15px;
     background: linear-gradient(110deg, #130428 19.95%, #251043 67.64%, #38126D 107.08%, #261045 156.61%, #190634 183.21%);
     box-shadow: 4px 7px 26px 0px rgba(0, 0, 0, 0.12);
@@ -697,4 +698,81 @@ body{
     width: 2.8rem;
     height: 2.8rem;
     margin-right: 1rem;
+}
+
+.work-cards{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    column-gap: 40px;
+    row-gap: 40px;
+}
+
+.work-card{
+    width: 300px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border-top: 5px solid #4F228D;
+}
+
+.work-img{
+    margin: auto;
+    border-radius: 12px 12px 0 0;
+    width: 300px;
+    height: 200px;
+}
+
+.design-image{
+    margin: auto;
+    border-radius: 12px 12px 0 0;
+    max-width: 100%;
+}
+
+.work-desc{
+    width: 100%;
+}
+
+.work-desc h2{
+    margin: 0;
+    padding: 5px 10px;
+    font-size: 1.2rem;
+}
+
+.work-desc-content{
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #ffffff22;
+    border-bottom: 1px solid #ffffff22;
+}
+
+.work-desc-content p{
+    text-align: justify;
+    font-size: 0.7rem;
+    font-weight: 300;
+    margin: 8px auto;
+    max-width: 250px;
+    line-height: 0.9rem;
+    font-family: 'Mooli', sans-serif;
+}
+
+.work-detail{
+    margin: 8px auto;
+}
+
+.work-detail img{
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.work-detail p{
+    width: max-content;
+    margin: 0;
+    font-family: 'Mooli', sans-serif;
+    font-size: 0.7rem;
 }
