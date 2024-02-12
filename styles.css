@@ -439,6 +439,14 @@ body{
     background-color: #2C1250;
 }
 
+.more-content{
+    cursor: pointer;
+}
+
+.more-content:hover{
+    text-decoration: underline;
+}
+
 #project{
     color: #FFF;
     margin-top: 90px;
