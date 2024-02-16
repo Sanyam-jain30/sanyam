@@ -153,7 +153,8 @@ body{
     margin-right: auto;
     left: 0;
     right: 0;
-    top: -40px;
+    top: 40px;
+    z-index: -1;
     text-align: center;
     flex-shrink: 0;
     position: absolute;
@@ -439,13 +440,13 @@ body{
     background-color: #2C1250;
 }
 
-.more-content{
+/* .more-content{
     cursor: pointer;
 }
 
 .more-content:hover{
     text-decoration: underline;
-}
+} */
 
 #project{
     color: #FFF;
@@ -647,13 +648,13 @@ body{
     align-items: center;
 }
 
-.more{
+/* .more{
     width: 100%;
 }
 
 .more span{
     font-size: 1.2rem;
-}
+} */
 
 .github-code{
     cursor: pointer;
@@ -721,28 +722,30 @@ body{
     width: 300px;
     position: relative;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     flex-wrap: wrap;
     border-top: 5px solid #4F228D;
 }
 
 .work-img{
-    margin: auto;
     border-radius: 12px 12px 0 0;
     width: 300px;
     height: 200px;
 }
 
 .design-image{
-    margin: auto;
     border-radius: 12px 12px 0 0;
-    max-width: 100%;
+    width: 300px;
 }
 
 .work-desc{
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .work-desc h2{
@@ -769,7 +772,7 @@ body{
 }
 
 .work-detail{
-    margin: 8px auto;
+    margin: 12px auto;
 }
 
 .work-detail img{
@@ -783,4 +786,52 @@ body{
     margin: 0;
     font-family: 'Mooli', sans-serif;
     font-size: 0.7rem;
+}
+
+.tab-container{
+    position: relative;
+    background: transparent;
+    width: 60%;
+    margin: auto;
+    padding: 20px 10px;
+    border-radius: 100px;
+    display: flex;
+    column-gap: 10px;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: 3px 4px 20px 0px rgba(156,66,235,0.5) inset;
+    margin-bottom: 30px;
+}
+
+.tab-container input[type="radio"]{
+    display: none;
+}
+
+.tab{
+    cursor: pointer;
+    width: 240px;
+    display: flex;
+    column-gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.notification{
+    width: 1.8rem;
+    border-radius: 50%;
+    text-align: center;
+    background-color: #826cff7a;
+    transition: 0.15s ease-in;
+}
+
+.glider{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-radius: 100px;
+    width: 240px;
+    height: 68px;
+    z-index: 0;
+    background: #693b9345;
+    transition: 0.25s ease-out;
 }

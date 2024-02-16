@@ -56,9 +56,20 @@
       <div class="center-gradient"></div>
       <div class="middle-gradient"></div>
       <h1 class="section-title">Research</h1>
+      <div class="tab-container">
+          <input id="all-research" type="radio" name="all-research" checked />
+          <label class="tab" for="all-research" onclick="handleLabelClick('all', 0, 'research', 'research-card', 'project-decision')">All<span class="notification">5</span></label>
+          <input id="published" type="radio" name="published" />
+          <label class="tab" for="published" onclick="handleLabelClick('published', 1, 'research', 'research-card', 'project-decision')">Published<span class="notification">1</span></label>
+          <input id="accepted" type="radio" name="accepted" />
+          <label class="tab" for="accepted" onclick="handleLabelClick('accepted', 2, 'research', 'research-card', 'project-decision')">Accepted<span class="notification">2</span></label>
+          <input id="awaiting" type="radio" name="awaiting" />
+          <label class="tab" for="awaiting" onclick="handleLabelClick('awaiting', 3, 'research', 'research-card', 'project-decision')">Awaiting Decision<span class="notification">2</span></label>
+          <span class="glider"></span>
+      </div>
       <div class="research-cards">
         <div class="research-card">
-          <span class="project-decision">Published</span>
+          <span class="project-decision published">Published</span>
           <img class="research-illustrator" src="assests/research-card-01.png" alt="research" />
           <div>
             <h2>Inappropriate Text Detection and Rephrasing using NLP</h2>
@@ -87,7 +98,7 @@
           </div>
         </div>
         <div class="research-card">
-          <span class="project-decision">Awaiting Decision at Knowledge and Information Systems Journal</span>
+          <span class="project-decision awaiting">Awaiting Decision at Knowledge and Information Systems Journal</span>
           <img class="research-illustrator" src="assests/research-card-05.png" alt="research" />
           <div>
             <h2>Advancing Cancer Diagnosis: A Deep Learning-Based Framework for Multi-Class Classification of Diverse Cancer Types via X-ray Imaging</h2>
@@ -105,7 +116,7 @@
         </div>
         
         <div class="research-card">
-          <span class="project-decision">Presented at ICTCS 2023</span>
+          <span class="project-decision accepted">Presented at ICTCS 2023</span>
           <img class="research-illustrator" src="assests/research-card-02.png" alt="research" />
           <div>
             <h2>Krushi Snehi: A Web-based Application for Safe and Smart Farming</h2>
@@ -125,7 +136,7 @@
               </a>
               <a class="no-highlight-certificate" href="https://drive.google.com/file/d/1W3FLq3NKMfBqYIXSTmhjIcrPwjo6mA7Y/view?usp=sharing" target="_blank">
                 <span class="certificate">
-                  <img class="certificate-icon" src="assests/certificate.png" alt="certificate">
+                  <img class="certificate-icon" src="assests/contribute.png" alt="certificate">
                   <span>Contribution</span>
                 </span>
               </a>
@@ -134,7 +145,7 @@
           </div>
         </div>
         <div class="research-card">
-          <span class="project-decision">Presented at ICCST 2023</span>
+          <span class="project-decision accepted">Presented at ICCST 2023</span>
           <img class="research-illustrator" src="assests/research-card-03.png" alt="research" />
           <div>
             <h2>Revolutionizing Malware Detection: Feature-Based Approach for Targeting Diverse Malware Categories</h2>
@@ -156,11 +167,11 @@
             </div>
           </div>
         </div>
-        <div class="more">
+        <!-- <div class="more">
           <span class="project-highlight more-content" style="float: right;">+1 more</span>
-        </div>
-        <div class="research-card" style="display: none;">
-          <span class="project-decision">Awaiting Decision at JARMIS 2023</span>
+        </div> -->
+        <div class="research-card">
+          <span class="project-decision awaiting">Awaiting Decision at JARMIS 2023</span>
           <img class="research-illustrator" src="assests/research-card-04.png" alt="research" />
           <div>
             <h2>INR FOREX Forecasting using Machine Learning and Deep Learning</h2>
@@ -282,6 +293,17 @@
     <div id="achievement">
       <div class="center-gradient"></div>
       <h1 class="section-title">Achievements</h1>
+      <div class="tab-container">
+          <input id="all-achievement" type="radio" name="all-achievement" checked />
+          <label class="tab" for="all-achievement" onclick="handleLabelClick('all', 0, 'achievement', 'achievement-card', 'achievement-type')">All<span class="notification">6</span></label>
+          <input id="hackathon" type="radio" name="hackathon" />
+          <label class="tab" for="hackathon" onclick="handleLabelClick('hackathon', 1, 'achievement', 'achievement-card', 'achievement-type')">Hackathon<span class="notification">4</span></label>
+          <input id="competition" type="radio" name="competition" />
+          <label class="tab" for="competition" onclick="handleLabelClick('competition', 2, 'achievement', 'achievement-card', 'achievement-type')">Competition<span class="notification">1</span></label>
+          <input id="award" type="radio" name="award" />
+          <label class="tab" for="award" onclick="handleLabelClick('award', 3, 'achievement', 'achievement-card', 'achievement-type')">Award<span class="notification">1</span></label>
+          <span class="glider"></span>
+      </div>
       <div class="achievement-cards">
         <div class="achievement-card">
           <div class="achievement-desc">
@@ -298,7 +320,7 @@
               </a>
             </div>
             <div>
-              <span class="achievement-type">Hackathon</span>
+              <span class="achievement-type hackathon">Hackathon</span>
             </div>
           </div>
         </div>
@@ -317,7 +339,7 @@
               </a>
             </div>
             <div>
-              <span class="achievement-type">Hackathon</span>
+              <span class="achievement-type hackathon">Hackathon</span>
             </div>
           </div>
         </div>
@@ -336,7 +358,7 @@
               </a>
             </div>
             <div>
-              <span class="achievement-type">Hackathon</span>
+              <span class="achievement-type hackathon">Hackathon</span>
             </div>
           </div>
         </div>
@@ -355,7 +377,7 @@
               </a>
             </div>
             <div>
-              <span class="achievement-type">Hackathon</span>
+              <span class="achievement-type hackathon">Hackathon</span>
             </div>
           </div>
         </div>
@@ -374,7 +396,7 @@
               </a>
             </div>
             <div>
-              <span class="achievement-type">Competition</span>
+              <span class="achievement-type competition">Competition</span>
             </div>
           </div>
         </div>
@@ -392,13 +414,13 @@
               </a>
             </div>
             <div>
-              <span class="achievement-type">Award</span>
+              <span class="achievement-type award">Award</span>
             </div>
           </div>
         </div>
-        <div class="more">
+        <!-- <div class="more">
           <span class="project-highlight">+2 more</span>
-        </div>
+        </div> -->
       </div>
     </div>
     <div id="project">
@@ -488,9 +510,9 @@
             <div></div>
           </div>
         </div>
-        <div class="more">
+        <!-- <div class="more">
           <span class="project-highlight" style="float: right;">+1 more</span>
-        </div>
+        </div> -->
       </div>
     </div>
     <div id="work">
@@ -517,7 +539,7 @@
           <div class="work-desc">
             <h2>Library Center Home Page</h2>
             <div class="work-desc-content">
-              <p>A visually striking homepage harmonizing aesthetics and functionality. Engage effortlessly with an intuitive search bar, while dynamic text elements highlight book count, store statistics, and our growing community. Immerse users in a creative, user-friendly space that celebrates the essence of literature.</p>
+              <p>A visually striking homepage harmonizing aesthetics and functionality. Engage effortlessly with an intuitive search bar, while dynamic text elements highlight book count, store statistics, and our growing community. Immerse users in a creative, user-friendly space that celebrates the essence of literature. Happy Design.</p>
             </div>
             <a class="no-highlight" href="https://www.figma.com/community/file/1330881641301452902/library-center-home-page" target="_blank">
               <span class="certificate work-detail">
@@ -607,7 +629,7 @@
           <div class="work-desc">
             <h2>Daily Rashifal API</h2>
             <div class="work-desc-content">
-              <p>The Daily Rashifal API offers current Vedic astrology horoscope predictions for all twelve Rashis (Zodiac Signs).</p>
+              <p>The Daily Rashifal API offers current Vedic astrology horoscope predictions for all twelve Rashis (Aries, Taurus, Gemini, Cancer, Leo, Virgo, Libra, Scorpio, Sagittarius, Capricorn, Aquarius, and Pisces).</p>
             </div>
             <a class="no-highlight" href="https://rapidapi.com/sanyamjain007/api/daily-rashifal-api/" target="_blank">
               <span class="certificate work-detail">
@@ -622,7 +644,7 @@
           <div class="work-desc">
             <h2>Cleveland Website Redesign</h2>
             <div class="work-desc-content">
-              <p>Redesign Cleveland city website with new colors and illustrations.</p>
+              <p>Redesign Cleveland city website with new colors and illustrations. A website design incorporating live press meets, recent events, upcoming events, full-listed contact details, and a place to explore many beautiful places of Cleveland.</p>
             </div>
             <a class="no-highlight" href="https://www.figma.com/community/file/1249991871020587984/cleveland-website-redesign" target="_blank">
               <span class="certificate work-detail">
@@ -637,7 +659,7 @@
           <div class="work-desc">
             <h2>Foundit Redesign</h2>
             <div class="work-desc-content">
-              <p>Redesign of Foundit website with new illustrations and mixture of colors. Complete prototype of Desktop view and design of Mobile view.</p>
+              <p>Redesign of Foundit website with new illustrations and colorful color palette. A web design with all features of current website and also with more minor interactions for users. Complete prototype of Desktop view and design of Mobile view.</p>
             </div>
             <a class="no-highlight" href="https://www.figma.com/community/file/1249994527731921876/foundit-redesign-mobile-desktop-view" target="_blank">
               <span class="certificate work-detail">
