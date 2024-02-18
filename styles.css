@@ -284,6 +284,22 @@ body{
     margin-left: 15px;
 }
 
+.achievement-highlight{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.achievement-highlight span{
+    font-family: 'Mooli', sans-serif;
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 1px solid #693B93;
+    background-color: #2C1250;
+    margin-right: 15px;
+}
+
 .outer-circle{
     margin-right: 30px;
     float: right;
@@ -758,7 +774,6 @@ body{
     width: 100%;
     text-align: center;
     border-top: 1px solid #ffffff22;
-    border-bottom: 1px solid #ffffff22;
 }
 
 .work-desc-content p{
@@ -772,12 +787,13 @@ body{
 }
 
 .work-detail{
-    margin: 12px auto;
+    padding: 5px 10px;
+    margin: 5px auto 10px;
 }
 
 .work-detail img{
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
     margin-right: 10px;
 }
 
