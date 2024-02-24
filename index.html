@@ -191,6 +191,7 @@
           </div>
       </div>
     </div>
+    </div>
     <div id="grade">
       <div class="center-gradient"></div>
       <h1 class="section-title">Grades</h1>
@@ -558,7 +559,33 @@
     <div id="work">
       <div class="center-gradient"></div>
       <h1 class="section-title">Works</h1>
+      <div class="tab-container">
+          <input id="all-work" type="radio" name="all-work" checked />
+          <label class="tab" for="all-work" onclick="handleLabelClick('all', 0, 'work', 'work-card', 'work-type')">All<span class="notification">15</span></label>
+          <input id="rapidapi" type="radio" name="rapidapi" />
+          <label class="tab" for="rapidapi" onclick="handleLabelClick('rapidapi', 1, 'work', 'work-card', 'work-type')">Rapid API<span class="notification">7</span></label>
+          <input id="figma" type="radio" name="figma" />
+          <label class="tab" for="figma" onclick="handleLabelClick('figma', 2, 'work', 'work-card', 'work-type')">Figma<span class="notification">5</span></label>
+          <input id="githubcontribution" type="radio" name="githubcontribution" />
+          <label class="tab" for="githubcontribution" onclick="handleLabelClick('githubcontribution', 3, 'work', 'work-card', 'work-type')">Github Contribution<span class="notification">3</span></label>
+          <span class="glider"></span>
+      </div>
       <div class="work-cards">
+        <div class="work-card">
+          <img style="width: 200px" class="work-img" src="assests/github-contribution-03.png">
+          <div class="work-desc">
+            <h2>Added Version on Frontend</h2>
+            <div class="work-desc-content">
+              <p>Contributed to a open source issue on visual-test-review github repository. Displayed version of the application dynamically in the frontend of the website. Raised a PR request and was successfully merged with the repository.</p>
+            </div>
+            <a class="no-highlight" href="https://github.com/andreas-bauer/visual-test-review/pull/8" target="_blank">
+              <span class="github-code-02 work-detail">
+                <img src="assests/GitHub.png" alt="work-destination">
+                <p class="work-type githubcontribution">Github Contribution</p>
+              </span>
+            </a>
+          </div>
+        </div>
         <div class="work-card">
           <img class="work-img" src="assests/topic-based-books-finder-api-high-resolution-logo.png">
           <div class="work-desc">
@@ -569,7 +596,7 @@
             <a class="no-highlight" href="https://rapidapi.com/sanyamjain007/api/topic-based-books-finder-api/" target="_blank">
               <span class="github-code-02 work-detail">
                 <img src="assests/RapidAPI.png" alt="work-destination">
-                <p>Rapid API</p>
+                <p class="work-type rapidapi">Rapid API</p>
               </span>
             </a>
           </div>
@@ -584,7 +611,7 @@
             <a class="no-highlight" href="https://www.figma.com/community/file/1341434532245918356/space-site" target="_blank">
               <span class="github-code-02 work-detail">
                 <img src="assests/Figma.png" alt="work-destination">
-                <p>Figma</p>
+                <p class="work-type figma">Figma</p>
               </span>
             </a>
           </div>
@@ -599,7 +626,7 @@
             <a class="no-highlight" href="https://rapidapi.com/sanyamjain007/api/place-population-finder-api/" target="_blank">
               <span class="github-code-02 work-detail">
                 <img src="assests/RapidAPI.png" alt="work-destination">
-                <p>Rapid API</p>
+                <p class="work-type rapidapi">Rapid API</p>
               </span>
             </a>
           </div>
@@ -614,7 +641,7 @@
             <a class="no-highlight" href="https://www.figma.com/community/file/1330881641301452902/library-center-home-page" target="_blank">
               <span class="github-code-02 work-detail">
                 <img src="assests/Figma.png" alt="work-destination">
-                <p>Figma</p>
+                <p class="work-type figma">Figma</p>
               </span>
             </a>
           </div>
@@ -629,7 +656,22 @@
             <a class="no-highlight" href="https://www.figma.com/community/file/1330870654313039966/car-booking-home-page" target="_blank">
               <span class="github-code-02 work-detail">
                 <img src="assests/Figma.png" alt="work-destination">
-                <p>Figma</p>
+                <p class="work-type figma">Figma</p>
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="work-card">
+          <img class="work-img" src="assests/github-contribution-01.png">
+          <div class="work-desc">
+            <h2>Provided Editing Movie Feature</h2>
+            <div class="work-desc-content">
+              <p>Contributed to a open source issue on movie-time github repository. Where added a new functionality of editing movie feature on discord bot using python language. Raised a PR request and was successfully merged with the repository of movie-time.</p>
+            </div>
+            <a class="no-highlight" href="https://github.com/nrossetti/movie-time/pull/14" target="_blank">
+              <span class="github-code-02 work-detail">
+                <img src="assests/GitHub.png" alt="work-destination">
+                <p class="work-type githubcontribution">Github Contribution</p>
               </span>
             </a>
           </div>
@@ -644,7 +686,7 @@
             <a class="no-highlight" href="https://rapidapi.com/sanyamjain007/api/mood-based-quote-api/" target="_blank">
               <span class="github-code-02 work-detail">
                 <img src="assests/RapidAPI.png" alt="work-destination">
-                <p>Rapid API</p>
+                <p class="work-type rapidapi">Rapid API</p>
               </span>
             </a>
           </div>
@@ -659,7 +701,7 @@
             <a class="no-highlight" href="https://rapidapi.com/sanyamjain007/api/whose-birthday-finder-api/" target="_blank">
               <span class="github-code-02 work-detail">
                 <img src="assests/RapidAPI.png" alt="work-destination">
-                <p>Rapid API</p>
+                <p class="work-type rapidapi">Rapid API</p>
               </span>
             </a>
           </div>
@@ -674,7 +716,22 @@
             <a class="no-highlight" href="https://rapidapi.com/sanyamjain007/api/day-special-finder-api/" target="_blank">
               <span class="github-code-02 work-detail">
                 <img src="assests/RapidAPI.png" alt="work-destination">
-                <p>Rapid API</p>
+                <p class="work-type rapidapi">Rapid API</p>
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="work-card">
+          <img class="work-img" src="assests/github-contribution-02.png">
+          <div class="work-desc">
+            <h2>Imporved UI Design</h2>
+            <div class="work-desc-content">
+              <p>Contributed to a open source issue on social-space-zone github repository. Enhanced UI design of 'start a post' functionality with suggested UI design and further made operational changes in the web page using HTML, CSS, and JavaScript.</p>
+            </div>
+            <a class="no-highlight" href="https://github.com/krishna-nayak/social-space-zone/pull/17" target="_blank">
+              <span class="github-code-02 work-detail">
+                <img src="assests/GitHub.png" alt="work-destination">
+                <p class="work-type githubcontribution">Github Contribution</p>
               </span>
             </a>
           </div>
@@ -689,7 +746,7 @@
             <a class="no-highlight" href="https://rapidapi.com/sanyamjain007/api/period-rashifal-api/" target="_blank">
               <span class="github-code-02 work-detail">
                 <img src="assests/RapidAPI.png" alt="work-destination">
-                <p>Rapid API</p>
+                <p class="work-type rapidapi">Rapid API</p>
               </span>
             </a>
           </div>
@@ -704,7 +761,7 @@
             <a class="no-highlight" href="https://rapidapi.com/sanyamjain007/api/daily-rashifal-api/" target="_blank">
               <span class="github-code-02 work-detail">
                 <img src="assests/RapidAPI.png" alt="work-destination">
-                <p>Rapid API</p>
+                <p class="work-type rapidapi">Rapid API</p>
               </span>
             </a>
           </div>
@@ -719,7 +776,7 @@
             <a class="no-highlight" href="https://www.figma.com/community/file/1249991871020587984/cleveland-website-redesign" target="_blank">
               <span class="github-code-02 work-detail">
                 <img src="assests/Figma.png" alt="work-destination">
-                <p>Figma</p>
+                <p class="work-type figma">Figma</p>
               </span>
             </a>
           </div>
@@ -734,7 +791,7 @@
             <a class="no-highlight" href="https://www.figma.com/community/file/1249994527731921876/foundit-redesign-mobile-desktop-view" target="_blank">
               <span class="github-code-02 work-detail">
                 <img src="assests/Figma.png" alt="work-destination">
-                <p>Figma</p>
+                <p class="work-type figma">Figma</p>
               </span>
             </a>
           </div>
