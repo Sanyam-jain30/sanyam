@@ -12,20 +12,31 @@
 // });
 
 function handleLabelClick(id, num, component, card, section) {
-    console.log(id, num, component, card);
     var tab = document.getElementById(id);
     var glider = document.querySelector(`#${component} .glider`);
     var projectList = document.querySelectorAll(`#${component} .${card}`);
-    console.log(glider, projectList);
 
     glider.style.transform = 'translateX(' + 100 * num + '%)';
-    console.log(id, id==="all");
 
     if(id == "all"){
-        console.log("yes");
         projectList.forEach(function(project) {
             project.style.display = '';
         });
+
+        var parentElement = document.getElementById(component);
+
+        var middleGradient = document.createElement("div");
+        middleGradient.classList.add("middle-gradient");
+
+        var endGradient = document.createElement("div");
+        endGradient.classList.add("end-gradient");
+
+        if (parentElement.getElementsByClassName("middle-gradient")[0] === undefined) {
+            parentElement.appendChild(middleGradient);
+        }
+        if (parentElement.getElementsByClassName("end-gradient")[0] === undefined) {
+            parentElement.appendChild(endGradient);
+        }
     } else {
         projectList.forEach(function(project) {
             var decision = project.querySelector(`.${section}`);
@@ -36,5 +47,18 @@ function handleLabelClick(id, num, component, card, section) {
                 project.style.display = 'none';
             }
         });
+
+        var childElements = document.getElementById(component).children;
+
+        for (var i = 0; i < childElements.length; i++) {
+            var childElement = childElements[i];
+            
+            if (childElement.classList.contains("middle-gradient")) {
+                childElement.classList.remove("middle-gradient");
+            }
+            if (childElement.classList.contains("end-gradient")) {
+                childElement.classList.remove("end-gradient");
+            }
+        }
     }
 }
