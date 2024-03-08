@@ -808,7 +808,7 @@ body{
 .tab-container{
     position: relative;
     background: transparent;
-    width: 60%;
+    width: 80%;
     margin: auto;
     padding: 20px 10px;
     border-radius: 100px;
@@ -826,7 +826,7 @@ body{
 
 .tab{
     cursor: pointer;
-    width: 240px;
+    width: 25%;
     display: flex;
     column-gap: 10px;
     justify-content: center;
@@ -846,7 +846,7 @@ body{
     top: 0px;
     left: 0px;
     border-radius: 100px;
-    width: 240px;
+    width: 25%;
     height: 68px;
     z-index: 0;
     background: #693b9345;

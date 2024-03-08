@@ -18,7 +18,7 @@ function handleLabelClick(id, num, component, card, section) {
     var projectList = document.querySelectorAll(`#${component} .${card}`);
     console.log(glider, projectList);
 
-    glider.style.transform = 'translateX(' + 230 * num + 'px)';
+    glider.style.transform = 'translateX(' + 100 * num + '%)';
     console.log(id, id==="all");
 
     if(id == "all"){
