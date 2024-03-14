@@ -11,6 +11,40 @@
 //     researchAddOn.style.display = "none";
 // });
 
+const backToTopButton = document.getElementById("back-to-top");
+
+backToTopButton.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "auto",
+  });
+});
+
+// document.addEventListener('DOMContentLoaded', function() {
+//     var hiddenElements = document.querySelectorAll('.hidden');
+  
+//     function fadeIn() {
+//       hiddenElements.forEach(function(element) {
+//         if (isElementInViewport(element)) {
+//           element.classList.add('fade-in');
+//         }
+//       });
+//     }
+  
+//     function isElementInViewport(el) {
+//         var rect = el.getBoundingClientRect();
+//         return (
+//           rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+//           rect.bottom >= 0 &&
+//           rect.left <= (window.innerWidth || document.documentElement.clientWidth) &&
+//           rect.right >= 0
+//         );
+//     }
+    
+//     window.addEventListener('scroll', fadeIn);
+//     window.addEventListener('resize', fadeIn); // For responsiveness
+// });
+
 function handleLabelClick(id, num, component, card, section) {
     var tab = document.getElementById(id);
     var glider = document.querySelector(`#${component} .glider`);
