@@ -95,6 +95,7 @@ body{
 #about{
     color: #FFF;
     display: flex;
+    column-gap: 0.7rem;
     justify-content: space-evenly;
     align-items: center;
 }
@@ -113,7 +114,7 @@ body{
 
 .desc{
     font-family: 'Mooli', sans-serif;
-    max-width: 600px;
+    max-width: 50%;
 }
 
 .desc h2{
@@ -442,6 +443,7 @@ body{
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
+    column-gap: 10px;
     padding: 20px 30px;
 }
 
@@ -677,7 +679,7 @@ body{
 }
 
 .research-card h2{
-    width: 650px;
+    max-width: 650px;
     line-height: 1.8rem;
     margin-bottom: 10px;
 }
@@ -876,7 +878,7 @@ body{
     left: 0px;
     border-radius: 100px;
     width: 25%;
-    height: 68px;
+    height: 100%;
     z-index: 0;
     background: #693b9345;
     transition: 0.25s ease-out;
@@ -914,3 +916,90 @@ body{
 #back-to-top:hover {
     opacity: 0.8;
 }
+
+@media only screen and (max-width: 1200px) {
+    .navbar-side {
+      width: 80%;
+    }
+  
+    #about {
+      padding: 0 20px;
+    }
+  
+    #about .gradient {
+      width: 280px;
+    }
+  
+    #about .desc h2,
+    .grade-container h2,
+    .intern-title h2,
+    .achievement-desc-content h2 {
+      font-size: 1.2rem;
+    }
+  
+    #about .desc p,
+    .project-decision,
+    .grade-dur,
+    .intern-dur,
+    .achievement-type,
+    .inner-circle span {
+      font-size: 0.8rem;
+    }
+  
+    #about .profile-icon,
+    .inner-circle {
+      width: 2rem;
+      height: 2rem;
+    }
+  
+    .profile-img {
+      width: 380px;
+      height: 300px;
+    }
+  
+    .project-decision,
+    .grade-dur,
+    .intern-dur,
+    .achievement-type {
+      font-size: 0.8rem;
+    }
+  
+    .research-card {
+      max-width: 700px;
+    }
+  
+    .research-illustrator {
+      width: 250px;
+    }
+  
+    .grade-card,
+    .intern-card,
+    .achievement-card {
+      max-width: 500px;
+    }
+  
+    .outer-circle {
+      width: 80px;
+      height: 80px;
+    }
+  
+    .inner-circle {
+      width: 60px;
+      height: 60px;
+    }
+  
+    .grade-title img,
+    .intern-title img {
+      max-width: 200px;
+    }
+  
+    .achievement-desc-content h2 {
+      font-size: 1.2rem;
+    }
+  
+    .project-card-even,
+    .project-card-odd {
+      flex-direction: column;
+      row-gap: 20px;
+    }
+}  
