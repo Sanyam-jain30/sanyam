@@ -11,6 +11,14 @@
 //     researchAddOn.style.display = "none";
 // });
 
+// JavaScript to toggle the dropdown menu
+const dropdown = document.querySelector('.dropdown');
+
+document.querySelector('.dropbtn').addEventListener('click', function() {
+  dropdown.classList.toggle('show');
+});
+
+
 const backToTopButton = document.getElementById("back-to-top");
 
 backToTopButton.addEventListener("click", () => {
@@ -95,4 +103,44 @@ function handleLabelClick(id, num, component, card, section) {
             }
         }
     }
+}
+
+// Handle Dropdown change for small screens
+function handleResearchDropdownChange(event) {
+    const selectedTab = event.target.value;
+    const num = {
+        "all": 0,
+        "published": 1,
+        "accepted": 2,
+        "awaiting": 3
+    }[selectedTab] || 0;
+    
+    // Trigger the tab click logic
+    handleLabelClick(selectedTab, num, 'research', 'research-card', 'project-decision');
+}
+
+function handleAchievementDropdownChange(event) {
+    const selectedTab = event.target.value;
+    const num = {
+        "all": 0,
+        "competition": 1,
+        "award": 2,
+        "others": 3
+    }[selectedTab] || 0;
+    
+    // Trigger the tab click logic
+    handleLabelClick(selectedTab, num, 'achievement', 'achievement-card', 'achievement-type');
+}
+
+function handleWorkDropdownChange(event) {
+    const selectedTab = event.target.value;
+    const num = {
+        "all": 0,
+        "rapidapi": 1,
+        "figma": 2,
+        "githubcontribution": 3
+    }[selectedTab] || 0;
+    
+    // Trigger the tab click logic
+    handleLabelClick(selectedTab, num, 'work', 'work-card', 'work-type');
 }

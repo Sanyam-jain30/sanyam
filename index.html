@@ -17,6 +17,17 @@
         <a href="#project">Projects</a>
         <a href="#work">Works</a>
       </div>
+      <div class="dropdown">
+        <button class="dropbtn">&#9776;</button>
+        <div class="dropdown-content">
+          <a href="#about">About</a>
+          <a href="#research">Research</a>
+          <a href="#grade">Grade</a>
+          <a href="#internship">Internships</a>
+          <a href="#achievement">Achievements</a>
+          <a href="#project">Projects</a>
+          <a href="#work">Works</a>
+      </div>
     </nav>
     <div id="back-to-top"><img src="assests/back-to-top.png" style="width: 30px; height: 30px;" alt="back-to-top"></div>
     <div id="about">
@@ -72,6 +83,14 @@
           <input id="awaiting" type="radio" name="awaiting" />
           <label class="tab" for="awaiting" onclick="handleLabelClick('awaiting', 3, 'research', 'research-card', 'project-decision')">Awaiting Decision<span class="notification">1</span></label>
           <span class="glider"></span>
+
+          <!-- Dropdown for small screens -->
+          <select class="dropdown" id="tab-dropdown" onchange="handleResearchDropdownChange(event)">
+              <option value="all" selected>All (6)</option>
+              <option value="published">Published (4)</option>
+              <option value="accepted">Accepted (1)</option>
+              <option value="awaiting">Awaiting Decision (1)</option>
+          </select>
       </div>
       <div class="research-cards">
         <div class="hidden research-card">
@@ -363,11 +382,19 @@
           <input id="others" type="radio" name="others" />
           <label class="tab" for="others" onclick="handleLabelClick('others', 3, 'achievement', 'achievement-card', 'achievement-type')">Others<span class="notification">8</span></label>
           <span class="glider"></span>
+
+          <!-- Dropdown for small screens -->
+          <select class="dropdown" id="tab-dropdown" onchange="handleAchievementDropdownChange(event)">
+              <option value="all" selected>All (20)</option>
+              <option value="competition">Competition (9)</option>
+              <option value="award">Award (3)</option>
+              <option value="others">Others (8)</option>
+          </select>
       </div>
       <div class="achievement-cards">
         <div class="hidden achievement-card">
           <div class="achievement-desc">
-            <img src="assests/achievement-card-19.png" alt="achievement-icon">
+            <img class="achievement-illustration" src="assests/achievement-card-19.png" alt="achievement-icon">
             <div class="achievement-desc-content">
               <h2>Third Runner Up</h2>
               <p>Hack the Vision (By Intel), Arizona State University</p>
@@ -388,7 +415,7 @@
         </div>
         <div class="hidden achievement-card">
           <div class="achievement-desc">
-            <img src="assests/achievement-card-18.png" alt="achievement-icon">
+            <img class="achievement-illustration" src="assests/achievement-card-18.png" alt="achievement-icon">
             <div class="achievement-desc-content">
               <h2>Project Submission</h2>
               <p>Principled Innovation Academy, Arizona State University</p>
@@ -409,7 +436,7 @@
         </div>
         <div class="hidden achievement-card">
           <div class="achievement-desc">
-            <img src="assests/achievement-card-17.png" alt="achievement-icon">
+            <img class="achievement-illustration" src="assests/achievement-card-17.png" alt="achievement-icon">
             <div class="achievement-desc-content">
               <h2>Winner</h2>
               <h6>Competed 143 participants</h6>
@@ -431,7 +458,7 @@
         </div>
         <div class="hidden achievement-card">
           <div class="achievement-desc">
-            <img src="assests/achievement-card-16.png" alt="achievement-icon">
+            <img class="achievement-illustration" src="assests/achievement-card-16.png" alt="achievement-icon">
             <div class="achievement-desc-content">
               <h2>Participation</h2>
               <h6>Presented personal NRSC ISRO project work</h6>
@@ -453,7 +480,7 @@
         </div>
         <div class="hidden achievement-card">
           <div class="achievement-desc">
-            <img src="assests/Secretary.png" alt="achievement-icon">
+            <img class="achievement-illustration" src="assests/Secretary.png" alt="achievement-icon">
             <div class="achievement-desc-content">
               <h2>Secretary</h2>
               <h6>Board member during 2023-2024</h6>
@@ -475,7 +502,7 @@
         </div>
         <div class="hidden achievement-card">
           <div class="achievement-desc">
-            <img src="assests/achievement-card-01.png" alt="achievement-icon">
+            <img class="achievement-illustration" src="assests/achievement-card-01.png" alt="achievement-icon">
             <div class="achievement-desc-content">
               <h2>Winner</h2>
               <h6>Competed 587 participants</h6>
@@ -497,7 +524,7 @@
         </div>
         <div class="hidden achievement-card">
           <div class="achievement-desc">
-            <img src="assests/achievement-card-13.png" alt="achievement-icon">
+            <img class="achievement-illustration" src="assests/achievement-card-13.png" alt="achievement-icon">
             <div class="achievement-desc-content">
               <h2>Education Performance Award 2022</h2>
               <p>Siwanchi Jain Sangh, Hyderabad</p>
@@ -517,7 +544,7 @@
         </div>
         <div class="hidden achievement-card">
           <div class="achievement-desc">
-            <img src="assests/achievement-card-02.png" alt="achievement-icon">
+            <img class="achievement-illustration" src="assests/achievement-card-02.png" alt="achievement-icon">
             <div class="achievement-desc-content">
               <h2>Winner</h2>
               <h6>Competed 111 participants</h6>
@@ -539,7 +566,7 @@
         </div>
         <div class="hidden achievement-card">
           <div class="achievement-desc">
-            <img src="assests/achievement-card-08.png" alt="achievement-icon">
+            <img class="achievement-illustration" src="assests/achievement-card-08.png" alt="achievement-icon">
             <div class="achievement-desc-content">
               <h2>Elite Score</h2>
               <p>Forest and their Management - NPTEL Course</p>
@@ -559,7 +586,7 @@
         </div>
         <div class="hidden achievement-card">
           <div class="achievement-desc">
-            <img src="assests/achievement-card-12.png" alt="achievement-icon">
+            <img class="achievement-illustration" src="assests/achievement-card-12.png" alt="achievement-icon">
             <div class="achievement-desc-content">
               <h2>Education Performance Award 2018</h2>
               <p>Siwanchi Jain Sangh, Hyderabad</p>
@@ -579,7 +606,7 @@
         </div>
         <div class="hidden achievement-card">
           <div class="achievement-desc">
-            <img src="assests/achievement-card-03.png" alt="achievement-icon">
+            <img class="achievement-illustration" src="assests/achievement-card-03.png" alt="achievement-icon">
             <div class="achievement-desc-content">
               <h2>First Runner Up</h2>
               <h6>Competed 1,177 participants</h6>
@@ -601,7 +628,7 @@
         </div>
         <div class="hidden achievement-card">
           <div class="achievement-desc">
-            <img src="assests/achievement-card-11.png" alt="achievement-icon">
+            <img class="achievement-illustration" src="assests/achievement-card-11.png" alt="achievement-icon">
             <div class="achievement-desc-content">
               <h2>IBM Professional Excellence</h2>
               <p>Getting Started with Enterprise-grade AI</p>
@@ -621,7 +648,7 @@
         </div>
         <div class="hidden achievement-card">
           <div class="achievement-desc">
-            <img src="assests/achievement-card-04.png" alt="achievement-icon">
+            <img class="achievement-illustration" src="assests/achievement-card-04.png" alt="achievement-icon">
             <div class="achievement-desc-content">
               <h2>Second Runner Up</h2>
               <h6>Competed 835 participants</h6>
@@ -643,7 +670,7 @@
         </div>
         <div class="hidden achievement-card">
           <div class="achievement-desc">
-            <img src="assests/achievement-card-05.png" alt="achievement-icon">
+            <img class="achievement-illustration" src="assests/achievement-card-05.png" alt="achievement-icon">
             <div class="achievement-desc-content">
               <h2>Second Runner Up</h2>
               <h6>Competed 179 participants</h6>
@@ -665,7 +692,7 @@
         </div>
         <div class="hidden achievement-card">
           <div class="achievement-desc">
-            <img src="assests/achievement-card-07.png" alt="achievement-icon">
+            <img class="achievement-illustration" src="assests/achievement-card-07.png" alt="achievement-icon">
             <div class="achievement-desc-content">
               <h2>Top Performer</h2>
               <h6>Competed 591 participants</h6>
@@ -687,7 +714,7 @@
         </div>
         <div class="hidden achievement-card">
           <div class="achievement-desc">
-            <img src="assests/achievement-card-10.png" alt="achievement-icon">
+            <img class="achievement-illustration" src="assests/achievement-card-10.png" alt="achievement-icon">
             <div class="achievement-desc-content">
               <h2>Microsoft Certified</h2>
               <p>Security, Compliance, and Identity Fundamentals</p>
@@ -707,7 +734,7 @@
         </div>
         <div class="hidden achievement-card">
           <div class="achievement-desc">
-            <img src="assests/achievement-card-06.png" alt="achievement-icon">
+            <img class="achievement-illustration" src="assests/achievement-card-06.png" alt="achievement-icon">
             <div class="achievement-desc-content">
               <h2>Silver medal and Achievement Certificate</h2>
               <p>Terapanth Professional Forum</p>
@@ -725,7 +752,7 @@
         </div>
         <div class="hidden achievement-card">
           <div class="achievement-desc">
-            <img src="assests/achievement-card-09.png" alt="achievement-icon">
+            <img class="achievement-illustration" src="assests/achievement-card-09.png" alt="achievement-icon">
             <div class="achievement-desc-content">
               <h2>Poster Participation</h2>
               <p>Virtual Poster Exhibition - VIT</p>
@@ -745,7 +772,7 @@
         </div>
         <div class="hidden achievement-card">
           <div class="achievement-desc">
-            <img src="assests/achievement-card-14.png" alt="achievement-icon">
+            <img class="achievement-illustration" src="assests/achievement-card-14.png" alt="achievement-icon">
             <div class="achievement-desc-content">
               <h2>Outstanding Performance</h2>
               <p>IT Wizard Programming and Productivity Curriculum</p>
@@ -765,7 +792,7 @@
         </div>
         <div class="hidden achievement-card">
           <div class="achievement-desc">
-            <img src="assests/achievement-card-15.png" alt="achievement-icon">
+            <img class="achievement-illustration" src="assests/achievement-card-15.png" alt="achievement-icon">
             <div class="achievement-desc-content">
               <h2>Abacus Student Certificate</h2>
               <p>Sri Chaitanya Techno School</p>
@@ -961,6 +988,14 @@
           <input id="githubcontribution" type="radio" name="githubcontribution" />
           <label class="tab" for="githubcontribution" onclick="handleLabelClick('githubcontribution', 3, 'work', 'work-card', 'work-type')">Github Contribution<span class="notification">6</span></label>
           <span class="glider"></span>
+
+          <!-- Dropdown for small screens -->
+          <select class="dropdown" id="tab-dropdown" onchange="handleWorkDropdownChange(event)">
+              <option value="all" selected>All (21)</option>
+              <option value="rapidapi">Rapid API (8)</option>
+              <option value="figma">Figma (7)</option>
+              <option value="githubcontribution">Github Contribution (6)</option>
+          </select>
       </div>
       <div class="work-cards">
         <div class="hidden work-card">

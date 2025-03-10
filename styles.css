@@ -16,19 +16,8 @@ body{
     background: #11071F;
 }
 
-/* .hidden {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 1s ease, visibility 0s linear 1s;
-}
-
-.fade-in {
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 1s ease, visibility 0s linear 0s;
-} */
-
-.navbar{
+/* Navbar Styles */
+.navbar {
     position: relative;
     padding: 0 30px;
     color: #FFF;
@@ -39,7 +28,14 @@ body{
     z-index: 1;
 }
 
-.navbar-side a{
+.navbar h2 {
+    font-family: 'Mooli', sans-serif;
+    font-size: 28px;
+    color: #FFF;
+    margin: 0;
+}
+
+.navbar-side a {
     padding: 10px;
     position: relative;
     color: #FFF;
@@ -72,12 +68,12 @@ body{
   bottom: 0;
   border-bottom: 3px solid #2E640F;
   border-left: 3px solid #3E8914;
-  transform: translate(100%, -50%)
+  transform: translate(100%, -50%);
 }
 
 .navbar-side a:hover:before,
-.navbar-side a:hover:after{
-  transform: translate(0,0);
+.navbar-side a:hover:after {
+  transform: translate(0, 0);
   opacity: 1;
 }
 
@@ -85,11 +81,71 @@ body{
   color: #3DA35D;
 }
 
-.navbar-side{
+.navbar-side {
     width: 60%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+/* Dropdown Button for smaller screens */
+.dropdown {
+    display: none;
+}
+
+.dropbtn {
+    font-size: 30px;
+    background-color: #1A0B2E;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #1A0B2E;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #575757;
+}
+
+/* Responsive Design for Smaller Screens */
+@media screen and (max-width: 768px) {
+  .navbar-side {
+    display: none; /* Hide the navbar links on smaller screens */
+  }
+
+  .dropdown {
+    display: block; /* Show the dropdown button on smaller screens */
+  }
+  
+  .dropbtn {
+    display: block; /* Show the hamburger menu button */
+  }
+  
+  .dropdown-content {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    background-color: #1A0B2E;
+  }
+  
+  .dropdown.show .dropdown-content {
+    display: block; /* Show the dropdown menu when active */
+  }
 }
 
 #about{
@@ -142,6 +198,25 @@ body{
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 768px) {
+    #about .gradient{
+        width: 87px;
+        height: 225px;
+    }
+
+    #about .profile-icon {
+        margin-right: 0.2rem;
+    }
+
+    #about .desc h2{
+        margin-bottom: 10px;
+    }
+
+    #about .desc p{
+        margin: 5px 0;
+    }
 }
 
 #internship, #achievement, #research, #grade, #work{
@@ -283,18 +358,49 @@ body{
     width: 240px;
 }
 
+.grade-title h2{
+    margin: 40px 0 0;
+    max-width: 360px;
+    line-height: 1.8rem;
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .grade-card{
+        gap: 10px;
+    }
+    
+    .grade-title{
+        justify-content: left;
+    }
+
+    .grade-card img{
+        display: none;
+    }
+
+    .grade-container{
+        display: flex;
+        flex-direction: row;
+        align-items: end;
+        margin-top: 30px;
+        justify-content: space-evenly;
+    }
+
+    .grade-title h2{
+        margin: 0px;
+        width: 75%;
+    }
+
+    .grade-container .outer-circle{
+        margin: 0px;
+    }
+}
+
 .intern-title h2{
     margin: 0;
     max-width: 320px;
     line-height: 1.8rem;
     margin-bottom: 10px;
-    text-align: left;
-}
-
-.grade-title h2{
-    margin: 40px 0 0;
-    max-width: 360px;
-    line-height: 1.8rem;
     text-align: left;
 }
 
@@ -311,7 +417,6 @@ body{
     border-radius: 10px;
     border: 1px solid #693B93;
     background-color: #2C1250;
-    margin-left: 15px;
 }
 
 .achievement-highlight{
@@ -485,6 +590,37 @@ body{
     border-radius: 10px;
     border: 1px solid #693B93;
     background-color: #2C1250;
+}
+
+@media (max-width: 768px) {
+    .achievement-cards{
+        width: 100%;
+    }
+
+    .achievement-card{
+        width: 95%;
+        min-width: unset;
+        min-height: unset;
+    }
+
+    .achievement-card .achievement-illustration{
+        display: none;
+    }
+
+    .achievement-desc{
+        padding: 20px 0px 0px 0px;
+        justify-content: flex-start;
+    }
+
+    .achievement-desc-content{
+        padding: 0px 0px 0px 10px;
+        margin: 0px;
+    }
+
+    .achievement-desc-content p:not(.certificate p){
+        margin-bottom: 5px;
+        width: 100%;
+    }
 }
 
 /* .more-content{
@@ -666,6 +802,51 @@ body{
     background-size: cover;
 }
 
+@media (max-width: 768px) {
+    .project-cards{
+        width: 100%;
+    }
+
+    .project-card-even, .project-card-odd{
+        width: 100%;
+    }
+
+    .project-block-even, .project-block-odd{
+        width: 95%;
+    }
+
+    .project-desc-even, .project-desc-odd{
+        width: 90%;
+        padding: 10px;
+    }
+
+    .project-img-even, .project-img-odd{
+        width: 90%;
+        height: 275px;
+        background-size: 90%;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+    .project-img-even div, .project-img-odd div{
+        width: 100%;
+    }
+
+    .project-title{
+        width: unset;
+    }
+
+    .right-gradient-even{
+        left: 0px;
+        width: 90%;
+    }
+
+    .right-gradient-odd{
+        right: 0px;
+        width: 90%;
+    }
+}
+
 #contact{
     color: #FFF;
     text-align: center;
@@ -719,6 +900,27 @@ body{
     display: flex;
     justify-content: start;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+@media (max-width: 768px) {
+    .research-cards{
+        width: 90%;
+    }
+
+    .research-card .research-illustrator{
+        display: none;
+    }
+
+    .research-card h2{
+        font-size: 1.1rem;
+        line-height: 1.3rem;
+    }
+
+    .research-card .project-decision{
+        font-size: 0.7rem;
+    }
 }
 
 /* .more{
@@ -909,6 +1111,84 @@ body{
     background: #693b9345;
     transition: 0.25s ease-out;
 }
+
+/* Hide tabs on small screens, and only show the dropdown */
+@media (max-width: 768px) {
+    .tab-container {
+        flex-direction: column;
+        position: relative;
+    }
+
+    .tab {
+        display: none; /* Hide individual tabs */
+    }
+
+    /* Stylish Dropdown */
+    .tab-container .dropdown {
+        display: block;
+        width: 90%; 
+        background-color: #693b93; /* Button color */
+        border-radius: 50px;
+        padding: 12px 20px;
+        border: none;
+        color: #fff;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+        position: relative; /* So we can position the icon */
+    }
+
+    /* Hover effect for dropdown */
+    .tab-container .dropdown:hover {
+        background-color: #5d2c84; /* Darker shade of the button */
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+        transform: translateY(-2px); /* Slightly lift on hover */
+    }
+
+    /* Dropdown options (appears when dropdown is clicked) */
+    .tab-container.dropdown-select {
+        display: none; /* Initially hide the select box */
+        width: 100%;
+        background: transparent;
+        border: none;
+        padding: 12px 20px;
+        color: #333;
+        font-size: 16px;
+        text-align: center;
+        border-radius: 50px;
+        cursor: pointer;
+        background-color: #693b93;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+    }
+
+    .tab-container .dropdown-select:hover {
+        background-color: #5d2c84;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+        transform: translateY(-2px); /* Slightly lift on hover */
+    }
+
+    /* Dropdown options (for select options) */
+    .tab-container .dropdown-option {
+        padding: 12px 20px;
+        cursor: pointer;
+        background-color: #826cff7a;
+        border-radius: 50px;
+        margin: 5px 0;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+    /* Hover effect for the dropdown options */
+    .tab-container.dropdown-option:hover {
+        background-color: #5d2c84;
+        color: white;
+    }
+}
+
 
 .end-container{
     text-align: center;
