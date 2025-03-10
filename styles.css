@@ -581,10 +581,6 @@ body{
     margin-left: 4rem;
 }
 
-.project-1{
-    background-image: url('assests/project-DHGRC.png');
-}
-
 .project-img-odd{
     margin-left: 10px;
 }
@@ -623,19 +619,49 @@ body{
     margin-right: 10px;
 }
 
+#project .no-highlight {
+    display: inline-block;
+    margin-right: 10px;
+}
+
 .project-0{
-    background: url('assests/project-DDRF.png');
+    background: url('assests/project-VV.png');
+    background-size: 100% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.project-1{
+    background: url('assests/project-FP.png');
     background-size: 90% 90%;
     background-position: center center;
     background-repeat: no-repeat;
 }
 
 .project-2{
+    background: url('assests/project-TS.png');
+    background-size: 90% 90%;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.project-3{
+    background: url('assests/project-DDRF.png');
+    background-size: 90% 90%;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.project-4{
+    background-image: url('assests/project-DHGRC.png');
+}
+
+.project-5{
     background: url('assests/project-WSFMA.png');
     background-size: cover;
 }
 
-.project-3{
+.project-6{
     background: url('assests/project-CAOW.png');
     background-size: cover;
 }
