@@ -146,6 +146,11 @@ body{
   .dropdown.show .dropdown-content {
     display: block; /* Show the dropdown menu when active */
   }
+
+  .dropdown-content a {
+    font-size: 0.8rem;
+    padding: 6px 16px;
+  }
 }
 
 #about{
@@ -343,6 +348,17 @@ body{
     align-items: end;
 }
 
+@media (max-width: 768px) {
+    .intern-cards{
+        width: 95%;
+        margin: auto;
+    }
+
+    .intern-card{
+        padding: 10px 5px;
+    }
+}
+
 .grade-title{
     width: 100%;
     display: flex;
@@ -366,8 +382,14 @@ body{
 }
 
 @media (max-width: 768px) {
+    .grade-cards{
+        width: 95%;
+        margin: auto;    
+    }
+
     .grade-card{
         gap: 10px;
+        min-width: unset;
     }
     
     .grade-title{
@@ -593,12 +615,18 @@ body{
 }
 
 @media (max-width: 768px) {
-    .achievement-cards{
+    #achievement .center-gradient{
         width: 100%;
+    }
+
+    .achievement-cards{
+        width: 95%;
+        margin: auto;
     }
 
     .achievement-card{
         width: 95%;
+        padding: 10px 5px;
         min-width: unset;
         min-height: unset;
     }
@@ -809,6 +837,7 @@ body{
 
     .project-card-even, .project-card-odd{
         width: 100%;
+        row-gap: 10px;
     }
 
     .project-block-even, .project-block-odd{
@@ -830,6 +859,7 @@ body{
 
     .project-img-even div, .project-img-odd div{
         width: 100%;
+        height: inherit;
     }
 
     .project-title{
@@ -1306,6 +1336,5 @@ body{
     .project-card-even,
     .project-card-odd {
       flex-direction: column;
-      row-gap: 20px;
     }
 }  
