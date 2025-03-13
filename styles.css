@@ -441,6 +441,10 @@ body{
     background-color: #2C1250;
 }
 
+.intern-highlight {
+    gap: 10px;
+}
+
 .achievement-highlight{
     display: flex;
     flex-wrap: wrap;
