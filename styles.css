@@ -19,7 +19,7 @@ body{
 /* Navbar Styles */
 .navbar {
     position: relative;
-    padding: 0 30px;
+    padding: 10px 30px;
     color: #FFF;
     display: flex;
     justify-content: space-between;
