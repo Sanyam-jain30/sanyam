@@ -374,9 +374,9 @@
       <h1 class="hidden section-title">Achievements</h1>
       <div class="hidden tab-container">
           <input id="all-achievement" type="radio" name="all-achievement" checked />
-          <label class="tab" for="all-achievement" onclick="handleLabelClick('all', 0, 'achievement', 'achievement-card', 'achievement-type')">All<span class="notification">22</span></label>
+          <label class="tab" for="all-achievement" onclick="handleLabelClick('all', 0, 'achievement', 'achievement-card', 'achievement-type')">All<span class="notification">24</span></label>
           <input id="hackathon" type="radio" name="hackathon" />
-          <label class="tab" for="hackathon" onclick="handleLabelClick('competition', 1, 'achievement', 'achievement-card', 'achievement-type')">Competition<span class="notification">11</span></label>
+          <label class="tab" for="hackathon" onclick="handleLabelClick('competition', 1, 'achievement', 'achievement-card', 'achievement-type')">Competition<span class="notification">13</span></label>
           <input id="award" type="radio" name="award" />
           <label class="tab" for="award" onclick="handleLabelClick('award', 2, 'achievement', 'achievement-card', 'achievement-type')">Award<span class="notification">3</span></label>
           <input id="others" type="radio" name="others" />
@@ -385,13 +385,40 @@
 
           <!-- Dropdown for small screens -->
           <select class="dropdown" id="tab-dropdown" onchange="handleAchievementDropdownChange(event)">
-              <option value="all" selected>All (20)</option>
-              <option value="competition">Competition (9)</option>
+              <option value="all" selected>All (24)</option>
+              <option value="competition">Competition (13)</option>
               <option value="award">Award (3)</option>
               <option value="others">Others (8)</option>
           </select>
       </div>
       <div class="achievement-cards">
+        <div class="hidden achievement-card">
+          <div class="achievement-desc">
+            <img class="achievement-illustration" src="assests/achievement-card-12.png" alt="achievement-icon">
+            <div class="achievement-desc-content">
+              <h2>Winner</h2>
+              <p>Innovation Hacks 2025, Arizona State University</p>
+              <div class="achievement-highlight">
+                <span>Team: 4</span>
+                <a class="no-highlight" href="https://drive.google.com/file/d/1EMsVRAh505FsP8vqmCCcNsNS8nPQWxXT/view?usp=sharing" target="_blank">
+                  <span class="certificate">
+                    <img class="certificate-icon" src="assests/certificate.png" alt="certificate">
+                    <p>Certificate</p>
+                  </span>
+                </a>
+                <a class="no-highlight" href="https://devpost.com/software/doable-ai" target="_blank">
+                  <span class="certificate">
+                    <img class="certificate-icon" src="assests/project.png" alt="project">
+                    <p>Project</p>
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div>
+              <span class="achievement-type competition">Hackathon</span>
+            </div>
+          </div>
+        </div>
         <div class="hidden achievement-card">
           <div class="achievement-desc">
             <img class="achievement-illustration" src="assests/achievement-card-21.png" alt="achievement-icon">
@@ -517,6 +544,28 @@
             </div>
             <div>
               <span class="achievement-type others">Participation</span>
+            </div>
+          </div>
+        </div>
+        <div class="hidden achievement-card">
+          <div class="achievement-desc">
+            <img class="achievement-illustration" src="assests/achievement-card-04.png" alt="achievement-icon">
+            <div class="achievement-desc-content">
+              <h2>Second Runner Up</h2>
+              <h6>Competed 347 participants</h6>
+              <p>Code-A-Bot 2024, IIIT-Vadodara</p>
+              <div class="achievement-highlight">
+                <span>Team: 2</span>
+                <a class="no-highlight" href="https://drive.google.com/file/d/1D49T0Dimmslxk1TrO6fXaYPsKHloSQzs/view?usp=sharing" target="_blank">
+                  <span class="certificate">
+                    <img class="certificate-icon" src="assests/certificate.png" alt="certificate">
+                    <p>Certificate</p>
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div>
+              <span class="achievement-type competition">Hackathon</span>
             </div>
           </div>
         </div>
