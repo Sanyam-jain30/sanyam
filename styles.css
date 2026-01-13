@@ -224,13 +224,13 @@ body{
     }
 }
 
-#internship, #achievement, #research, #grade, #work{
+#experience, #achievement, #research, #grade, #work{
     position: relative;
     color: #FFF;   
     text-align: center;
 }
 
-#grade, #internship, #work{
+#grade, #experience, #work{
     margin-top: 50px;
 }
 
@@ -1261,22 +1261,22 @@ body{
     .navbar-side {
       width: 80%;
     }
-  
+
     #about {
       padding: 0 20px;
     }
-  
+
     #about .gradient {
       width: 280px;
     }
-  
+
     #about .desc h2,
     .grade-container h2,
     .intern-title h2,
     .achievement-desc-content h2 {
       font-size: 1.2rem;
     }
-  
+
     #about .desc p,
     .project-decision,
     .grade-dur,
@@ -1285,60 +1285,116 @@ body{
     .inner-circle span {
       font-size: 0.8rem;
     }
-  
+
     #about .profile-icon,
     .inner-circle {
       width: 2rem;
       height: 2rem;
     }
-  
+
     .profile-img {
       width: 380px;
       height: 300px;
     }
-  
+
     .project-decision,
     .grade-dur,
     .intern-dur,
     .achievement-type {
       font-size: 0.8rem;
     }
-  
+
     .research-card {
       max-width: 700px;
     }
-  
+
     .research-illustrator {
       width: 250px;
     }
-  
+
     .grade-card,
     .intern-card,
     .achievement-card {
       max-width: 500px;
     }
-  
+
     .outer-circle {
       width: 80px;
       height: 80px;
     }
-  
+
     .inner-circle {
       width: 60px;
       height: 60px;
     }
-  
+
     .grade-title img,
     .intern-title img {
       max-width: 200px;
     }
-  
+
     .achievement-desc-content h2 {
       font-size: 1.2rem;
     }
-  
+
     .project-card-even,
     .project-card-odd {
       flex-direction: column;
+    }
+}
+
+/* Load More Button Styles */
+.load-more-btn {
+    display: block;
+    margin: 30px auto;
+    padding: 15px 40px;
+    font-family: 'Mooli', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #FFF;
+    background: linear-gradient(135deg, #693B93 0%, #4F228D 100%);
+    border: 2px solid #826cff;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(105, 59, 147, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.load-more-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.load-more-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.load-more-btn:hover {
+    background: linear-gradient(135deg, #7843A8 0%, #5D2A9F 100%);
+    border-color: #9C66FF;
+    box-shadow: 0 6px 25px rgba(105, 59, 147, 0.6);
+    transform: translateY(-2px);
+}
+
+.load-more-btn:active {
+    transform: translateY(0px);
+    box-shadow: 0 2px 10px rgba(105, 59, 147, 0.4);
+}
+
+@media (max-width: 768px) {
+    .load-more-btn {
+        padding: 12px 30px;
+        font-size: 0.9rem;
     }
 }  
