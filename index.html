@@ -1,1419 +1,808 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css" />
-    <script src="https://kit.fontawesome.com/73aac47dbd.js" crossorigin="anonymous"></script>
-  </head>
-  <body>
-    <nav class="navbar">
-      <a class="no-highlight" href="#"><h2>Sanyam Jain</h2></a>
-      <div class="navbar-side">
-        <a href="#about">About</a>
-        <a href="#research">Research</a>
-        <a href="#grade">Grade</a>
-        <a href="#experience">Experiences</a>
-        <a href="#achievement">Achievements</a>
-        <a href="#project">Projects</a>
-        <a href="#work">Works</a>
-      </div>
-      <div class="dropdown">
-        <button class="dropbtn">&#9776;</button>
-        <div class="dropdown-content">
-          <a href="#about">About</a>
-          <a href="#research">Research</a>
-          <a href="#grade">Grade</a>
-          <a href="#experience">Experiences</a>
-          <a href="#achievement">Achievements</a>
-          <a href="#project">Projects</a>
-          <a href="#work">Works</a>
-      </div>
+    <title>SANYAM JAIN | OPERATIVE PROFILE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Section Popup Notification -->
+    <div class="section-popup" id="section-popup"></div>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-text">INITIALIZING PROFILE</div>
+        <div class="loading-bar-container">
+            <div class="loading-bar" id="loading-bar"></div>
+        </div>
+        <div class="loading-percentage" id="loading-percentage">0%</div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="nav-logo">SANYAM_JAIN</a>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#hero">Base</a></li>
+            <li><a href="#stats">Intel</a></li>
+            <li><a href="#achievements">Missions</a></li>
+            <li><a href="#experience">Operations</a></li>
+            <li><a href="#skills">Arsenal</a></li>
+            <li><a href="#certifications">Certs</a></li>
+            <li><a href="#projects">Projects</a></li>
+        </ul>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </nav>
-    <div id="back-to-top"><img src="assests/back-to-top.png" style="width: 30px; height: 30px;" alt="back-to-top"></div>
-    <div id="about">
-      <div class="hidden gradient"></div>
-      <div class="hidden desc">
-        <h2>Hello! I am <span style="color: #7127BA;">Sanyam Jain</span></h2>
-        <p>A Computer Science graduate student at Arizona State University, Arizona, USA.</p>
-        <p>
-          A passionate and hard-working person. 
-          Encourage collaborative work to make friends and gain diverse knowledge. 
-        </p>
-        <p>Ex-Secretary of IEEE Technology and Engineering Management Society, VIT chapter, 2023-24</p>
-        <div class="profiles">
-          <a class="no-highlight" href="mailto:sanyamjain.usa@gmail.com" target="_blank">
-            <img class="profile-icon" src="assests/Gmail.png" alt="mail" />
-          </a>
-          <a class="no-highlight" href="https://github.com/Sanyam-jain30" target="_blank">
-            <img class="profile-icon" src="assests/GitHub.png" alt="github" />
-          </a>
-          <a class="no-highlight" href="https://scholar.google.com/citations?user=L_WPs-cAAAAJ&hl=en" target="_blank">
-            <img class="profile-icon" src="assests/Googlescholar.png" alt="googlescholar" />
-          </a>
-          <a class="no-highlight" href="https://www.figma.com/@sanyamjain_30" target="_blank">
-            <img class="profile-icon" src="assests/Figma.png" alt="web" />
-          </a>
-          <a class="no-highlight" href="https://www.linkedin.com/in/sanyam-jain-611577237/" target="_blank">
-            <img class="profile-icon" src="assests/Linkedin.png" alt="linkedin" />
-          </a>
-          <a class="no-highlight" href="https://sanyam-jain30.github.io/sanyam/" target="_blank">
-            <img class="profile-icon" src="assests/Web.png" alt="web" />
-          </a>
-          <a class="no-highlight" href="https://unstop.com/u/sanyam_jain_30" target="_blank">
-            <img class="profile-icon" src="assests/unstop.png" alt="unstop" />
-          </a>
-          <a class="no-highlight" href="https://rapidapi.com/user/sanyamjain007" target="_blank">
-            <img class="profile-icon" src="assests/RapidAPI.png" alt="rapidapi" />
-          </a>
-        </div>
-      </div>
-      <div class="profile-img"></div>
-    </div>
-    <div id="research">
-      <div class="hidden center-gradient"></div>
-      <div class="hidden middle-gradient"></div>
-      <h1 class="hidden section-title">Research</h1>
-      <div class="hidden tab-container">
-          <input id="all-research" type="radio" name="all-research" checked />
-          <label class="tab" for="all-research" onclick="handleLabelClick('all', 0, 'research', 'research-card', 'project-decision')">All<span class="notification">6</span></label>
-          <input id="published" type="radio" name="published" />
-          <label class="tab" for="published" onclick="handleLabelClick('published', 1, 'research', 'research-card', 'project-decision')">Published<span class="notification">4</span></label>
-          <input id="accepted" type="radio" name="accepted" />
-          <label class="tab" for="accepted" onclick="handleLabelClick('accepted', 2, 'research', 'research-card', 'project-decision')">Accepted<span class="notification">1</span></label>
-          <input id="awaiting" type="radio" name="awaiting" />
-          <label class="tab" for="awaiting" onclick="handleLabelClick('awaiting', 3, 'research', 'research-card', 'project-decision')">Awaiting Decision<span class="notification">1</span></label>
-          <span class="glider"></span>
 
-          <!-- Dropdown for small screens -->
-          <select class="dropdown" id="tab-dropdown" onchange="handleResearchDropdownChange(event)">
-              <option value="all" selected>All (6)</option>
-              <option value="published">Published (4)</option>
-              <option value="accepted">Accepted (1)</option>
-              <option value="awaiting">Awaiting Decision (1)</option>
-          </select>
-      </div>
-      <div class="research-cards">
-        <div class="hidden research-card">
-          <span class="project-decision awaiting">Awaiting Decision at BMC Medical Imaging</span>
-          <img class="research-illustrator" src="assests/research-card-05.png" alt="research" />
-          <div>
-            <h2>Advancing Cancer Diagnosis: A Deep Learning-Based Framework for Multi-Class Classification of Diverse Cancer Types via X-ray Imaging</h2>
-            <p class="project-highlight">Guide: Dr Sumathy S, Dr Durai Raj</p>
-            <div class="research-additional">
-              <a class="no-highlight" href="https://github.com/Sanyam-jain30/Deep-Learning-Based-Framework-for-Multi-Class-Classification-of-Diverse-Cancer-Types" target="_blank">
-                <div class="github-code">
-                  <img class="github-icon" src="assests/GitHub.png" alt="code" />
-                  <span>Repository</span>
+    <!-- Hero Section -->
+    <section id="hero" data-section-name="Command Center">
+        <div class="hero-grid"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-tag">OPERATIVE STATUS: ACTIVE</div>
+                <h1 class="hero-name">
+                    <span>SANYAM</span><br>JAIN
+                </h1>
+                <p class="hero-title">
+                    MS Computer Science @ <strong>Arizona State University</strong>
+                </p>
+                <p class="hero-description">
+                    A passionate and hard-working operative with expertise in AI/ML, Full Stack Development, and Research.
+                    Ex-Secretary of IEEE Technology and Engineering Management Society, VIT chapter.
+                    Ready to deploy innovative solutions.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-box">
+                        <div class="stat-number">6</div>
+                        <div class="stat-label">Publications</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">24</div>
+                        <div class="stat-label">Achievements</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">3.67</div>
+                        <div class="stat-label">MS GPA</div>
+                    </div>
                 </div>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="hidden research-card">
-          <span class="project-decision published">Published</span>
-          <img class="research-illustrator" src="assests/research-card-04.png" alt="research" />
-          <div>
-            <h2>INR FOREX Forecasting using Machine Learning and Deep Learning</h2>
-            <p class="project-highlight">Guide: Dr Aswani Kumar Cherukuri</p>
-            <div class="research-additional">
-              <a class="no-highlight" href="https://github.com/Sanyam-jain30/INR-FOREX-Forecasting-using-Machine-Learning-and-Deep-Learning-Techniques" target="_blank">
-                <div class="github-code">
-                  <img class="github-icon" src="assests/GitHub.png" alt="code" />
-                  <span>Repository</span>
+                <div class="social-links">
+                    <a href="https://drive.google.com/file/d/17rM6UMFcAZvt1O-1OFdMwfAfpka6ntrJ/view?usp=sharing" class="social-link resume-highlight resume-btn" target="_blank" title="Download Resume">
+                        <i class="fas fa-file-download"></i> Resume
+                    </a>
+                    <a href="mailto:sanyamjain3003@gmail.com" class="social-link" target="_blank" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://github.com/Sanyam-jain30" class="social-link" target="_blank" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://scholar.google.com/citations?user=L_WPs-cAAAAJ&hl=en" class="social-link" target="_blank" title="Google Scholar">
+                        <i class="fas fa-graduation-cap"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/sanyam-jain-611577237/" class="social-link" target="_blank" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://www.figma.com/@sanyamjain_30" class="social-link" target="_blank" title="Figma">
+                        <i class="fab fa-figma"></i>
+                    </a>
                 </div>
-              </a>
-              <a class="no-highlight-certificate" href="https://doi.org/10.1201/9781003500391" target="_blank">
-                <span class="certificate">
-                  <img class="certificate-icon" src="assests/paper.png" alt="book" />
-                  <span>Paper</span>
-                </span>
-              </a>
             </div>
-          </div>
-        </div>
-        <div class="hidden research-card">
-          <span class="project-decision accepted">Accepted at ICAMADA 2024</span>
-          <img class="research-illustrator" src="assests/research-card-06.png" alt="research" />
-          <div>
-            <h2>Geospatial Chatbot Framework for Seamless User Experience</h2>
-            <p class="project-highlight">Guide: Dr Jaya Saxena</p>
-            <div class="research-additional">
-              <a class="no-highlight-certificate" style="margin-left: 0px;" href="https://drive.google.com/file/d/1EhkpZfM_BrY1w2nfRxAmht1O9FG3yx1F/view?usp=sharing" target="_blank">
-                <span class="certificate">
-                  <img class="certificate-icon" src="assests/presentation.png" alt="certificate">
-                  <span>Presentation</span>
-                </span>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="hidden research-card">
-          <span class="project-decision published">Published</span>
-          <img class="research-illustrator" src="assests/research-card-01.png" alt="research" />
-          <div>
-            <h2>Inappropriate Text Detection and Rephrasing using NLP</h2>
-            <p class="project-highlight">Guide: Dr BalaKrushna Tripathy</p>
-            <div class="research-additional">
-              <a class="no-highlight" href="https://github.com/Sanyam-jain30/Inappropriate-Text-Detection-and-Rephrasing-using-NLP" target="_blank">
-                <div class="github-code">
-                  <img class="github-icon" src="assests/GitHub.png" alt="code" />
-                  <span>Repository</span>
+            <div class="hero-image">
+                <div class="image-frame" id="profile-frame">
+                    <img src="assests/Myself.png" alt="Sanyam Jain" class="profile-image" id="profile-img">
+                    <img src="assests/Myself2.jpg" alt="Sanyam Jain Alt" class="profile-image image-glitch" id="profile-img-alt">
+                    <div class="image-overlay"></div>
+                    <div class="image-switch-hint" id="switch-hint">CLICK TO SWITCH</div>
+                    <div class="image-status">
+                        <div class="status-label">Current Mission</div>
+                        <div class="status-text">Seeking Full Time</div>
+                    </div>
                 </div>
-              </a>
-              <a class="no-highlight-certificate" href="https://drive.google.com/file/d/1BMMenEICztnPVW9GhtqAl04FUsLDGr6Q/view?usp=drive_link" target="_blank">
-                <span class="certificate">
-                  <img class="certificate-icon" src="assests/presentation.png" alt="certificate">
-                  <span>Presentation</span>
-                </span>
-              </a>
-              <a class="no-highlight-certificate" href="https://link.springer.com/chapter/10.1007/978-3-031-53731-8_21" target="_blank">
-                <span class="certificate">
-                  <img class="certificate-icon" src="assests/paper.png" alt="paper">
-                  <span>Paper</span>
-                </span>
-              </a>
             </div>
-          </div>
         </div>
-        <div class="hidden research-card">
-          <span class="project-decision published">Published</span>
-          <img class="research-illustrator" src="assests/research-card-02.png" alt="research" />
-          <div>
-            <h2>Krushi Snehi: A Web-based Application for Safe and Smart Farming</h2>
-            <p class="project-highlight">Guide: Dr Sumaiya Thaseen</p>
-            <div class="research-additional">
-              <a class="no-highlight" href="https://github.com/Sanyam-jain30/Krushi-Snehi_A-Web-based-Application-for-Safe-and-Smart-Farming" target="_blank">
-                <div class="github-code">
-                  <img class="github-icon" src="assests/GitHub.png" alt="code" />
-                  <span>Repository</span>
-                </div>
-              </a>
-              <a class="no-highlight-certificate" href="https://drive.google.com/file/d/13WRiz_pERUVZVQyW8uBEHbY1a9lpDP2y/view?usp=sharing" target="_blank">
-                <span class="certificate">
-                  <img class="certificate-icon" src="assests/presentation.png" alt="certificate">
-                  <span>Presentation</span>
-                </span>
-              </a>
-              <a class="no-highlight-certificate" href="https://drive.google.com/file/d/1W3FLq3NKMfBqYIXSTmhjIcrPwjo6mA7Y/view?usp=sharing" target="_blank">
-                <span class="certificate">
-                  <img class="certificate-icon" src="assests/contribute.png" alt="certificate">
-                  <span>Contribution</span>
-                </span>
-              </a>
-              <a class="no-highlight-certificate" href="https://link.springer.com/chapter/10.1007/978-981-97-1260-1_21" target="_blank">
-                <span class="certificate">
-                  <img class="certificate-icon" src="assests/paper.png" alt="paper">
-                  <span>Paper</span>
-                </span>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="hidden research-card">
-          <span class="project-decision published">Published</span>
-          <img class="research-illustrator" src="assests/research-card-03.png" alt="research" />
-          <div>
-            <h2>Revolutionizing Malware Detection: Feature-Based Approach for Targeting Diverse Malware Categories</h2>
-            <p class="project-highlight">Guide: Dr Sumaiya Thaseen</p>
-            <div class="research-additional">
-              <a class="no-highlight" href="https://github.com/Sanyam-jain30/Revolutionizing-Malware-Detection_Feature-Based-Approach-for-Targeting-Diverse-Malware-Categories" target="_blank">
-                <div class="github-code">
-                  <img class="github-icon" src="assests/GitHub.png" alt="code" />
-                  <span>Repository</span>
-                </div>
-              </a>
-              <a class="no-highlight-certificate" href="https://drive.google.com/file/d/18UK8AQ0zhICfGl7-s_Sf4K5BPKN1weGW/view?usp=sharing" target="_blank">
-                <span class="certificate">
-                  <img class="certificate-icon" src="assests/presentation.png" alt="certificate">
-                  <span>Presentation</span>
-                </span>
-              </a>
-              <a class="no-highlight-certificate" href="https://ieeexplore.ieee.org/document/10474249" target="_blank">
-                <span class="certificate">
-                  <img class="certificate-icon" src="assests/paper.png" alt="paper">
-                  <span>Paper</span>
-                </span>
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- <div class="more">
-          <span class="project-highlight more-content" style="float: right;">+1 more</span>
-        </div> -->
-      </div>
-      <button class="load-more-btn">Load More (2 remaining)</button>
-    </div>
-    <div id="grade">
-      <div class="hidden center-gradient"></div>
-      <h1 class="hidden section-title">Grades</h1>
-      <div class="grade-cards">
-        <div class="hidden grade-card">
-          <span class="grade-dur">Aug 2024 - Present</span>
-          <div class="grade-title">
-            <img src="assests/master-degree.png" alt="grade-icon">
-            <div class="grade-container">
-              <h2>Arizona State University, Tempe</h2>
-              <div class="outer-circle">
-                <div class="inner-circle">
-                  <span>3.67 / 4</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="grade-highlight">
-            <span>Master of Science in Computer Science</span>
-          </div>
-        </div>
-        <div class="hidden grade-card">
-          <span class="grade-dur">May 2020 - May 2024</span>
-          <div class="grade-title">
-            <img src="assests/degree.png" alt="grade-icon">
-            <div class="grade-container">
-              <h2>Vellore Institute of Technology, Vellore</h2>
-              <div class="outer-circle">
-                <div class="inner-circle">
-                  <span>9.13 / 10</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="grade-highlight">
-            <span>Bachelor of Technology in Information Technology</span>
-          </div>
-        </div>
-        <div class="hidden grade-card">
-          <span class="grade-dur">March 2018 - March 2020</span>
-          <div class="grade-title">
-            <img src="assests/junior-college.png" alt="grade-icon">
-            <div class="grade-container">
-              <h2>Narayana Junior College, Hyderabad</h2>
-              <div class="outer-circle">
-                <div class="inner-circle">
-                  <span>94.8 / 100</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="grade-highlight">
-            <span>Mathematics, Physics, Chemistry</span>
-          </div>
-        </div>
-        <div class="hidden grade-card">
-          <span class="grade-dur">March 2013 - March 2018</span>
-          <div class="grade-title">
-            <img src="assests/school.png" alt="grade-icon">
-            <div class="grade-container">
-              <h2>Sri Chaitanya Techno School, Hyderabad</h2>
-              <div class="outer-circle">
-                <div class="inner-circle">
-                  <span>9.3 / 10</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="experience">
-      <div class="hidden center-gradient"></div>
-      <h1 class="hidden section-title">Experiences</h1>
-      <div class="intern-cards">
-        <div class="hidden intern-card">
-          <span class="intern-dur">Jan 2024 - June 2024</span>
-          <div class="intern-title">
-            <img src="assests/intern-card-00.png" alt="intern-icon">
-            <h2>Student Intern at National Remote Sensing Center, ISRO</h2>
-          </div>
-          <div class="intern-highlight">
-            <span>Company: NRSC, ISRO</span>
-            <a class="no-highlight" href="https://drive.google.com/file/d/1FV0OMaw_OkChn33a-m19SVZe5bZajHBA/view?usp=sharing" target="_blank">
-              <span class="certificate">
-                <img class="certificate-icon" src="assests/certificate.png" alt="certificate">
-                <p>Certificate</p>
-              </span>
-            </a>
-          </div>
-        </div>
-        <div class="hidden intern-card">
-          <span class="intern-dur">Jan 2022 - Jun 2022</span>
-          <div class="intern-title">
-            <img style="width: 265px;" src="assests/intern-card-01.png" alt="intern-icon">
-            <h2>Full Stack Web Developer</h2>
-          </div>
-          <div class="intern-highlight">
-            <span>Company: Papersdrop</span>
-            <a class="no-highlight" href="https://drive.google.com/file/d/1VyIu_nbWuXOI_yrjuN1XXK21hJ6lYpe_/view?usp=drive_link" target="_blank">
-              <span class="certificate">
-                <img class="certificate-icon" src="assests/certificate.png" alt="certificate">
-                <p>Certificate</p>
-              </span>
-            </a>
-          </div>
-        </div>
-        <div class="hidden intern-card">
-          <span class="intern-dur">Dec 2021 - Jan 2022</span>
-          <div class="intern-title">
-            <img src="assests/intern-card-02.png" alt="intern-icon">
-            <h2>Cyber Security & Ethical Hacking Program Intern</h2>
-          </div>
-          <div class="intern-highlight">
-            <span>Company: Inmovidu</span>
-            <a class="no-highlight" href="https://drive.google.com/file/d/1usj3EcgBlK1eA5sRXGIuA3SZZXwT_hua/view?usp=drive_link" target="_blank">
-              <span class="certificate">
-                <img class="certificate-icon" src="assests/certificate.png" alt="certificate">
-                <p>Certificate</p>
-              </span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="achievement">
-      <div class="hidden center-gradient"></div>
-      <div class="hidden middle-gradient"></div>
-      <div class="hidden end-gradient"></div>
-      <h1 class="hidden section-title">Achievements</h1>
-      <div class="hidden tab-container">
-          <input id="all-achievement" type="radio" name="all-achievement" checked />
-          <label class="tab" for="all-achievement" onclick="handleLabelClick('all', 0, 'achievement', 'achievement-card', 'achievement-type')">All<span class="notification">24</span></label>
-          <input id="hackathon" type="radio" name="hackathon" />
-          <label class="tab" for="hackathon" onclick="handleLabelClick('competition', 1, 'achievement', 'achievement-card', 'achievement-type')">Competition<span class="notification">13</span></label>
-          <input id="award" type="radio" name="award" />
-          <label class="tab" for="award" onclick="handleLabelClick('award', 2, 'achievement', 'achievement-card', 'achievement-type')">Award<span class="notification">3</span></label>
-          <input id="others" type="radio" name="others" />
-          <label class="tab" for="others" onclick="handleLabelClick('others', 3, 'achievement', 'achievement-card', 'achievement-type')">Others<span class="notification">8</span></label>
-          <span class="glider"></span>
+    </section>
 
-          <!-- Dropdown for small screens -->
-          <select class="dropdown" id="tab-dropdown" onchange="handleAchievementDropdownChange(event)">
-              <option value="all" selected>All (24)</option>
-              <option value="competition">Competition (13)</option>
-              <option value="award">Award (3)</option>
-              <option value="others">Others (8)</option>
-          </select>
-      </div>
-      <div class="achievement-cards">
-        <div class="hidden achievement-card">
-          <div class="achievement-desc">
-            <img class="achievement-illustration" src="assests/achievement-card-12.png" alt="achievement-icon">
-            <div class="achievement-desc-content">
-              <h2>Winner</h2>
-              <p>Innovation Hacks 2025, Arizona State University</p>
-              <div class="achievement-highlight">
-                <span>Team: 4</span>
-                <a class="no-highlight" href="https://drive.google.com/file/d/1EMsVRAh505FsP8vqmCCcNsNS8nPQWxXT/view?usp=sharing" target="_blank">
-                  <span class="certificate">
-                    <img class="certificate-icon" src="assests/certificate.png" alt="certificate">
-                    <p>Certificate</p>
-                  </span>
-                </a>
-                <a class="no-highlight" href="https://devpost.com/software/doable-ai" target="_blank">
-                  <span class="certificate">
-                    <img class="certificate-icon" src="assests/project.png" alt="project">
-                    <p>Project</p>
-                  </span>
-                </a>
-              </div>
-            </div>
-            <div>
-              <span class="achievement-type competition">Hackathon</span>
-            </div>
-          </div>
+    <!-- Stats Section -->
+    <section id="stats" data-section-name="Intel Briefing">
+        <div class="section-header">
+            <div class="section-number">01</div>
+            <h2 class="section-title">INTEL BRIEFING</h2>
         </div>
-        <div class="hidden achievement-card">
-          <div class="achievement-desc">
-            <img class="achievement-illustration" src="assests/achievement-card-21.png" alt="achievement-icon">
-            <div class="achievement-desc-content">
-              <h2>Track Winner</h2>
-              <p>DevHacks, Arizona State University</p>
-              <div class="achievement-highlight">
-                <span>Team: 4</span>
-                <a class="no-highlight" href="https://devpost.com/software/renvue" target="_blank">
-                  <span class="certificate">
-                    <img class="certificate-icon" src="assests/project.png" alt="project">
-                    <p>Project</p>
-                  </span>
-                </a>
-              </div>
+        <div class="stats-grid">
+            <div class="stats-card">
+                <div class="stats-icon"><i class="fas fa-book"></i></div>
+                <div class="stats-card-number">6</div>
+                <div class="stats-card-label">Publications</div>
+                <div class="stats-card-detail">4 Published | 1 Accepted | 1 Awaiting</div>
             </div>
-            <div>
-              <span class="achievement-type competition">Hackathon</span>
+            <div class="stats-card">
+                <div class="stats-icon"><i class="fas fa-trophy"></i></div>
+                <div class="stats-card-number">24</div>
+                <div class="stats-card-label">Achievements</div>
+                <div class="stats-card-detail">13 Competitions | 3 Awards | 8 Others</div>
             </div>
-          </div>
+            <div class="stats-card">
+                <div class="stats-icon"><i class="fas fa-laptop-code"></i></div>
+                <div class="stats-card-number">7</div>
+                <div class="stats-card-label">Projects</div>
+                <div class="stats-card-detail">AI/ML | Web Dev | Security</div>
+            </div>
+            <div class="stats-card">
+                <div class="stats-icon"><i class="fas fa-rocket"></i></div>
+                <div class="stats-card-number">21</div>
+                <div class="stats-card-label">Works</div>
+                <div class="stats-card-detail">8 APIs | 7 Figma | 6 Contributions</div>
+            </div>
         </div>
-        <div class="hidden achievement-card">
-          <div class="achievement-desc">
-            <img class="achievement-illustration" src="assests/achievement-card-20.png" alt="achievement-icon">
-            <div class="achievement-desc-content">
-              <h2>First Runner Up</h2>
-              <p>AI Hackathon, Arizona State University</p>
-              <div class="achievement-highlight">
-                <span>Team: 4</span>
-                <a class="no-highlight" href="https://airtable.com/appZBbWnd2B1UQmnU/shrUpHJZTdr1FpVAL" target="_blank">
-                  <span class="certificate">
-                    <img class="certificate-icon" src="assests/project.png" alt="project">
-                    <p>Project</p>
-                  </span>
-                </a>
-              </div>
-            </div>
-            <div>
-              <span class="achievement-type competition">Hackathon</span>
-            </div>
-          </div>
-        </div>
-        <div class="hidden achievement-card">
-          <div class="achievement-desc">
-            <img class="achievement-illustration" src="assests/achievement-card-19.png" alt="achievement-icon">
-            <div class="achievement-desc-content">
-              <h2>Second Runner Up</h2>
-              <p>Hack the Vision (By Intel), Arizona State University</p>
-              <div class="achievement-highlight">
-                <span>Team: 3</span>
-                <a class="no-highlight" href="https://drive.google.com/file/d/1ZuP4mFf59fPARDgNIUR6lCMI71-9jL4d/view?usp=sharing" target="_blank">
-                  <span class="certificate">
-                    <img class="certificate-icon" src="assests/certificate.png" alt="certificate">
-                    <p>Certificate</p>
-                  </span>
-                </a>
-              </div>
-            </div>
-            <div>
-              <span class="achievement-type competition">Hackathon</span>
-            </div>
-          </div>
-        </div>
-        <div class="hidden achievement-card">
-          <div class="achievement-desc">
-            <img class="achievement-illustration" src="assests/achievement-card-18.png" alt="achievement-icon">
-            <div class="achievement-desc-content">
-              <h2>Project Submission</h2>
-              <p>Principled Innovation Academy, Arizona State University</p>
-              <div class="achievement-highlight">
-                <span>Team: 4</span>
-                <a class="no-highlight" href="https://drive.google.com/file/d/10dYCQyFvWV4StLtwsAN5M8k3dVUtCORe/view?usp=sharing" target="_blank">
-                  <span class="certificate">
-                    <img class="certificate-icon" src="assests/certificate.png" alt="certificate">
-                    <p>Certificate</p>
-                  </span>
-                </a>
-              </div>
-            </div>
-            <div>
-              <span class="achievement-type competition">Hackathon</span>
-            </div>
-          </div>
-        </div>
-        <div class="hidden achievement-card">
-          <div class="achievement-desc">
-            <img class="achievement-illustration" src="assests/achievement-card-17.png" alt="achievement-icon">
-            <div class="achievement-desc-content">
-              <h2>Winner</h2>
-              <h6>Competed 143 participants</h6>
-              <p>Hack SoDA 2024, Arizona State University</p>
-              <div class="achievement-highlight">
-                <span>Team: 4</span>
-                <a class="no-highlight" href="https://devpost.com/software/gradify-7jvqnm" target="_blank">
-                  <span class="certificate">
-                    <img class="certificate-icon" src="assests/certificate.png" alt="certificate">
-                    <p>Project Gallery</p>
-                  </span>
-                </a>
-              </div>
-            </div>
-            <div>
-              <span class="achievement-type competition">Hackathon</span>
-            </div>
-          </div>
-        </div>
-        <div class="hidden achievement-card">
-          <div class="achievement-desc">
-            <img class="achievement-illustration" src="assests/achievement-card-16.png" alt="achievement-icon">
-            <div class="achievement-desc-content">
-              <h2>Participation</h2>
-              <h6>Presented personal NRSC ISRO project work</h6>
-              <p>User Interaction Meet 2024, Hyderabad</p>
-              <div class="achievement-highlight">
-                <span>Team: 3</span>
-                <a class="no-highlight" href="https://drive.google.com/file/d/1QOLPl8QUC-UEDlkCGH35HorOZOoyhPNE/view?usp=sharing" target="_blank">
-                  <span class="certificate">
-                    <img class="certificate-icon" src="assests/certificate.png" alt="certificate">
-                    <p>Certificate</p>
-                  </span>
-                </a>
-              </div>
-            </div>
-            <div>
-              <span class="achievement-type others">Participation</span>
-            </div>
-          </div>
-        </div>
-        <div class="hidden achievement-card">
-          <div class="achievement-desc">
-            <img class="achievement-illustration" src="assests/achievement-card-04.png" alt="achievement-icon">
-            <div class="achievement-desc-content">
-              <h2>Second Runner Up</h2>
-              <h6>Competed 347 participants</h6>
-              <p>Code-A-Bot 2024, IIIT-Vadodara</p>
-              <div class="achievement-highlight">
-                <span>Team: 2</span>
-                <a class="no-highlight" href="https://drive.google.com/file/d/1D49T0Dimmslxk1TrO6fXaYPsKHloSQzs/view?usp=sharing" target="_blank">
-                  <span class="certificate">
-                    <img class="certificate-icon" src="assests/certificate.png" alt="certificate">
-                    <p>Certificate</p>
-                  </span>
-                </a>
-              </div>
-            </div>
-            <div>
-              <span class="achievement-type competition">Hackathon</span>
-            </div>
-          </div>
-        </div>
-        <div class="hidden achievement-card">
-          <div class="achievement-desc">
-            <img class="achievement-illustration" src="assests/Secretary.png" alt="achievement-icon">
-            <div class="achievement-desc-content">
-              <h2>Secretary</h2>
-              <h6>Board member during 2023-2024</h6>
-              <p>IEEE Technology and Engineering Management Society, VIT chapter</p>
-              <div class="achievement-highlight">
-                <span>Team: 100+</span>
-                <a class="no-highlight" href="https://drive.google.com/file/d/1eHorwwAHigoyfEQ_uizJxrHfb136gbzP/view?usp=sharing" target="_blank">
-                  <span class="certificate">
-                    <img class="certificate-icon" src="assests/certificate.png" alt="certificate">
-                    <p>Certificate</p>
-                  </span>
-                </a>
-              </div>
-            </div>
-            <div>
-              <span class="achievement-type others">Volunteer</span>
-            </div>
-          </div>
-        </div>
-        <div class="hidden achievement-card">
-          <div class="achievement-desc">
-            <img class="achievement-illustration" src="assests/achievement-card-01.png" alt="achievement-icon">
-            <div class="achievement-desc-content">
-              <h2>Winner</h2>
-              <h6>Competed 587 participants</h6>
-              <p>Epidemiology Hackathon,Shaastra 2023, IIT Madras</p>
-              <div class="achievement-highlight">
-                <span>Team: Individual</span>
-                <a class="no-highlight" href="https://drive.google.com/file/d/1xQukJ2MlOMOUwoXvJO4vMs5JWf0l09mq/view?usp=drive_link" target="_blank">
-                  <span class="certificate">
-                    <img class="certificate-icon" src="assests/certificate.png" alt="certificate">
-                    <p>Certificate</p>
-                  </span>
-                </a>
-              </div>
-            </div>
-            <div>
-              <span class="achievement-type competition">Hackathon</span>
-            </div>
-          </div>
-        </div>
-        <div class="hidden achievement-card">
-          <div class="achievement-desc">
-            <img class="achievement-illustration" src="assests/achievement-card-13.png" alt="achievement-icon">
-            <div class="achievement-desc-content">
-              <h2>Education Performance Award 2022</h2>
-              <p>Siwanchi Jain Sangh, Hyderabad</p>
-              <div class="achievement-highlight">
-                <a class="no-highlight" href="https://drive.google.com/file/d/1-vjKBfTqGL-yyUbznp1ubVECspapOz2S/view?usp=sharing" target="_blank">
-                  <span class="certificate">
-                    <img class="certificate-icon" src="assests/certificate.png" alt="certificate">
-                    <p>Certificate</p>
-                  </span>
-                </a>
-              </div>
-            </div>
-            <div>
-              <span class="achievement-type award">Award</span>
-            </div>
-          </div>
-        </div>
-        <div class="hidden achievement-card">
-          <div class="achievement-desc">
-            <img class="achievement-illustration" src="assests/achievement-card-02.png" alt="achievement-icon">
-            <div class="achievement-desc-content">
-              <h2>Winner</h2>
-              <h6>Competed 111 participants</h6>
-              <p>Pragyan'23, JC Bose University, Haryana</p>
-              <div class="achievement-highlight">
-                <span>Team: 2 members</span>
-                <a class="no-highlight" href="https://drive.google.com/file/d/1SiTW-66RJPvzDCY4cMyKHGmdfaWSa_ae/view?usp=sharing" target="_blank">
-                  <span class="certificate">
-                    <img class="certificate-icon" src="assests/certificate.png" alt="certificate">
-                    <p>Certificate</p>
-                  </span>
-                </a>
-              </div>
-            </div>
-            <div>
-              <span class="achievement-type competition">Hackathon</span>
-            </div>
-          </div>
-        </div>
-        <div class="hidden achievement-card">
-          <div class="achievement-desc">
-            <img class="achievement-illustration" src="assests/achievement-card-08.png" alt="achievement-icon">
-            <div class="achievement-desc-content">
-              <h2>Elite Score</h2>
-              <p>Forest and their Management - NPTEL Course</p>
-              <div class="achievement-highlight">
-                <a class="no-highlight" href="https://drive.google.com/file/d/1GgrW_gDr3NHNKC8oeqpBDZ2aA_oQz9D8/view?usp=sharing" target="_blank">
-                  <span class="certificate">
-                    <img class="certificate-icon" src="assests/certificate.png" alt="certificate">
-                    <p>Certificate</p>
-                  </span>
-                </a>
-              </div>
-            </div>
-            <div>
-              <span class="achievement-type others">Course</span>
-            </div>
-          </div>
-        </div>
-        <div class="hidden achievement-card">
-          <div class="achievement-desc">
-            <img class="achievement-illustration" src="assests/achievement-card-12.png" alt="achievement-icon">
-            <div class="achievement-desc-content">
-              <h2>Education Performance Award 2018</h2>
-              <p>Siwanchi Jain Sangh, Hyderabad</p>
-              <div class="achievement-highlight">
-                <a class="no-highlight" href="https://drive.google.com/file/d/1kbfXH26kcw5qssQyXg-nemctzyf3s91g/view?usp=sharing" target="_blank">
-                  <span class="certificate">
-                    <img class="certificate-icon" src="assests/certificate.png" alt="certificate">
-                    <p>Certificate</p>
-                  </span>
-                </a>
-              </div>
-            </div>
-            <div>
-              <span class="achievement-type award">Award</span>
-            </div>
-          </div>
-        </div>
-        <div class="hidden achievement-card">
-          <div class="achievement-desc">
-            <img class="achievement-illustration" src="assests/achievement-card-03.png" alt="achievement-icon">
-            <div class="achievement-desc-content">
-              <h2>First Runner Up</h2>
-              <h6>Competed 1,177 participants</h6>
-              <p>Tech Savishkaar, Vasavi College of Engineering, Hyderabad</p>
-              <div class="achievement-highlight">
-                <span>Team: Individual</span>
-                <a class="no-highlight" href="https://drive.google.com/file/d/1KxT3g9uCUXRrQ1R2ryYsmjLFCNHq5lGR/view?usp=drive_link" target="_blank">
-                  <span class="certificate">
-                    <img class="certificate-icon" src="assests/certificate.png" alt="certificate">
-                    <p>Certificate</p>
-                  </span>
-                </a>
-              </div>
-            </div>
-            <div>
-              <span class="achievement-type competition">Hackathon</span>
-            </div>
-          </div>
-        </div>
-        <div class="hidden achievement-card">
-          <div class="achievement-desc">
-            <img class="achievement-illustration" src="assests/achievement-card-11.png" alt="achievement-icon">
-            <div class="achievement-desc-content">
-              <h2>IBM Professional Excellence</h2>
-              <p>Getting Started with Enterprise-grade AI</p>
-              <div class="achievement-highlight">
-                <a class="no-highlight" href="https://drive.google.com/file/d/1eD8_p5R0b0hZKBmrTcsXTUoXMs2OeY68/view?usp=sharing" target="_blank">
-                  <span class="certificate">
-                    <img class="certificate-icon" src="assests/certificate.png" alt="certificate">
-                    <p>Certificate</p>
-                  </span>
-                </a>
-              </div>
-            </div>
-            <div>
-              <span class="achievement-type others">Certification</span>
-            </div>
-          </div>
-        </div>
-        <div class="hidden achievement-card">
-          <div class="achievement-desc">
-            <img class="achievement-illustration" src="assests/achievement-card-04.png" alt="achievement-icon">
-            <div class="achievement-desc-content">
-              <h2>Second Runner Up</h2>
-              <h6>Competed 835 participants</h6>
-              <p>Hack-AI-Thon, Karpagam College of Engineering, Tamil Nadu</p>
-              <div class="achievement-highlight">
-                <span>Team: Individual</span>
-                <a class="no-highlight" href="https://drive.google.com/file/d/1PRs9mv66H1EEsOFxwfTPvr_mgZia21PU/view?usp=drive_link" target="_blank">
-                  <span class="certificate">
-                    <img class="certificate-icon" src="assests/certificate.png" alt="certificate">
-                    <p>Certificate</p>
-                  </span>
-                </a>
-              </div>
-            </div>
-            <div>
-              <span class="achievement-type competition">Hackathon</span>
-            </div>
-          </div>
-        </div>
-        <div class="hidden achievement-card">
-          <div class="achievement-desc">
-            <img class="achievement-illustration" src="assests/achievement-card-05.png" alt="achievement-icon">
-            <div class="achievement-desc-content">
-              <h2>Second Runner Up</h2>
-              <h6>Competed 179 participants</h6>
-              <p>AI PromptThon 2.0, Texify Company</p>
-              <div class="achievement-highlight">
-                <span>Team: Individual</span>
-                <a class="no-highlight" href="https://drive.google.com/file/d/1fumJilyZjSazIk3QiXzHSdCe-X6JknsK/view?usp=drive_link" target="_blank">
-                  <span class="certificate">
-                    <img class="certificate-icon" src="assests/certificate.png" alt="certificate">
-                    <p>Certificate</p>
-                  </span>
-                </a>
-              </div>
-            </div>
-            <div>
-              <span class="achievement-type competition">Competition</span>
-            </div>
-          </div>
-        </div>
-        <div class="hidden achievement-card">
-          <div class="achievement-desc">
-            <img class="achievement-illustration" src="assests/achievement-card-07.png" alt="achievement-icon">
-            <div class="achievement-desc-content">
-              <h2>Top Performer</h2>
-              <h6>Competed 591 participants</h6>
-              <p>MachineKnightSeason 02, TechBrain</p>
-              <div class="achievement-highlight ">
-                <span>Team: Individual</span>
-                <a class="no-highlight" href="https://drive.google.com/file/d/1whtRzq2QUuGeY7mX1IY4nH576xVaf4sl/view?usp=sharing" target="_blank">
-                  <span class="certificate">
-                    <img class="certificate-icon" src="assests/certificate.png" alt="certificate">
-                    <p>Certificate</p>
-                  </span>
-                </a>
-              </div>
-            </div>
-            <div>
-              <span class="achievement-type competition">Competition</span>
-            </div>
-          </div>
-        </div>
-        <div class="hidden achievement-card">
-          <div class="achievement-desc">
-            <img class="achievement-illustration" src="assests/achievement-card-10.png" alt="achievement-icon">
-            <div class="achievement-desc-content">
-              <h2>Microsoft Certified</h2>
-              <p>Security, Compliance, and Identity Fundamentals</p>
-              <div class="achievement-highlight">
-                <a class="no-highlight" href="https://drive.google.com/file/d/1fdOhoxfQWUODdyi2KW-X8dEz7W1ObLJy/view?usp=sharing" target="_blank">
-                  <span class="certificate">
-                    <img class="certificate-icon" src="assests/certificate.png" alt="certificate">
-                    <p>Certificate</p>
-                  </span>
-                </a>
-              </div>
-            </div>
-            <div>
-              <span class="achievement-type others">Certification</span>
-            </div>
-          </div>
-        </div>
-        <div class="hidden achievement-card">
-          <div class="achievement-desc">
-            <img class="achievement-illustration" src="assests/achievement-card-06.png" alt="achievement-icon">
-            <div class="achievement-desc-content">
-              <h2>Silver medal and Achievement Certificate</h2>
-              <p>Terapanth Professional Forum</p>
-              <a class="no-highlight" href="https://drive.google.com/file/d/1rXQYaYxIzSbGpHvUZC2PI92kA5ku6zla/view?usp=sharing" target="_blank">
-                <span class="certificate">
-                  <img class="certificate-icon" src="assests/certificate.png" alt="certificate">
-                  <p>Certificate</p>
-                </span>
-              </a>
-            </div>
-            <div>
-              <span class="achievement-type award">Award</span>
-            </div>
-          </div>
-        </div>
-        <div class="hidden achievement-card">
-          <div class="achievement-desc">
-            <img class="achievement-illustration" src="assests/achievement-card-09.png" alt="achievement-icon">
-            <div class="achievement-desc-content">
-              <h2>Poster Participation</h2>
-              <p>Virtual Poster Exhibition - VIT</p>
-              <div class="achievement-highlight">
-                <a class="no-highlight" href="https://drive.google.com/file/d/11HcMRV0CtP3vnSfKwVAKKJpmKsovRtzV/view?usp=sharing" target="_blank">
-                  <span class="certificate">
-                    <img class="certificate-icon" src="assests/certificate.png" alt="certificate">
-                    <p>Certificate</p>
-                  </span>
-                </a>
-              </div>
-            </div>
-            <div>
-              <span class="achievement-type others">Participation</span>
-            </div>
-          </div>
-        </div>
-        <div class="hidden achievement-card">
-          <div class="achievement-desc">
-            <img class="achievement-illustration" src="assests/achievement-card-14.png" alt="achievement-icon">
-            <div class="achievement-desc-content">
-              <h2>Outstanding Performance</h2>
-              <p>IT Wizard Programming and Productivity Curriculum</p>
-              <div class="achievement-highlight">
-                <a class="no-highlight" href="https://drive.google.com/file/d/1mKlr_RzxCDjfRfv78jrdhqGVWr92Oxob/view?usp=sharing" target="_blank">
-                  <span class="certificate">
-                    <img class="certificate-icon" src="assests/certificate.png" alt="certificate">
-                    <p>Certificate</p>
-                  </span>
-                </a>
-              </div>
-            </div>
-            <div>
-              <span class="achievement-type others">Certification</span>
-            </div>
-          </div>
-        </div>
-        <div class="hidden achievement-card">
-          <div class="achievement-desc">
-            <img class="achievement-illustration" src="assests/achievement-card-15.png" alt="achievement-icon">
-            <div class="achievement-desc-content">
-              <h2>Abacus Student Certificate</h2>
-              <p>Sri Chaitanya Techno School</p>
-              <div class="achievement-highlight">
-                <a class="no-highlight" href="https://drive.google.com/file/d/1bAzkJ7VsrYs1KCNJu7qccCoYR2TCqeDS/view?usp=sharing" target="_blank">
-                  <span class="certificate">
-                    <img class="certificate-icon" src="assests/certificate.png" alt="certificate">
-                    <p>Certificate</p>
-                  </span>
-                </a>
-              </div>
-            </div>
-            <div>
-              <span class="achievement-type others">Certification</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <button class="load-more-btn">Load More (18 remaining)</button>
-    </div>
-    <div id="project">
-      <h1 class="hidden section-title title-project">Projects</h1>
-      <div class="project-cards">
-        <div class="hidden project-card-odd">
-          <div class="right-gradient-odd"></div>
-          <div class="project-block-odd">
-            <span>Group project</span>
-            <p class="project-title">Vision Vault</p>
-            <div class="project-desc-odd">
-              <p>Vision Vault processes videos by detecting and blurring faces to protect privacy. It encrypts the face data using symmetric encryption (Fernet) and allows selective restoration of specific frames by decrypting the face data with the correct keys, ensuring secure video handling while preserving key content integrity.</p>
-              <a class="no-highlight" href="https://github.com/Sanyam-jain30/Vision-Vault" target="_blank">
-                <div class="github-code-02">
-                  <img class="github-icon-02" src="assests/GitHub.png" alt="code" />
-                  <span>Repository</span>
-                </div>
-              </a>
-            </div>
-            <img src="assests/project-icon.png" alt="icon" />
-            <img src="assests/project-icon.png" alt="icon" />
-          </div>
-          <div class="project-img-odd project-0">
-            <div></div>
-          </div>
-        </div>
-        <div class="hidden project-card-even">
-          <div class="right-gradient-even"></div>
-          <div class="project-img-even project-1">
-            <div></div>
-          </div>
-          <div class="project-block-even">
-            <span>Group project</span>
-            <p class="project-title">Full Plates</p>
-            <div class="project-desc-even">
-              <p>Full Plates is a web platform that connects restaurants with NGOs to reduce food waste and alleviate hunger. By facilitating the donation of leftover food, which is transported and stored through sponsored services, we ensure that excess food reaches those in need, making a positive impact on both food conservation and communities.</p>
-              <a class="no-highlight" href="https://github.com/Sanyam-jain30/full-plates" target="_blank">
-                <div class="github-code-02">
-                  <img class="github-icon-02" src="assests/GitHub.png" alt="code" />
-                  <span>Repository</span>
-                </div>
-              </a>
-              <a class="no-highlight" href="https://github.com/Sanyam-jain30/full-plates" target="_blank">
-                <div class="github-code-02">
-                  <img class="github-icon-02" src="assests/Web.png" alt="websites" />
-                  <span>Website</span>
-                </div>
-              </a>
-            </div>
-            <img src="assests/project-icon.png" alt="icon" />
-            <img src="assests/project-icon.png" alt="icon" />
-          </div>
-        </div>
-        <div class="hidden project-card-odd">
-          <div class="right-gradient-odd"></div>
-          <div class="project-block-odd">
-            <span>Personal project</span>
-            <p class="project-title">Trash Sale</p>
-            <div class="project-desc-odd">
-              <p>Trash Seller is a platform that uses AI and image recognition to identify and estimate the value of your waste. Upload a photo, sell your items, and earn money while promoting recycling and reducing pollution. Turn your trash into cash and make a positive environmental impact!</p>
-              <a class="no-highlight" href="https://github.com/Sanyam-jain30/Trash-Seller" target="_blank">
-                <div class="github-code-02">
-                  <img class="github-icon-02" src="assests/GitHub.png" alt="code" />
-                  <span>Repository</span>
-                </div>
-              </a>
-            </div>
-            <img src="assests/project-icon.png" alt="icon" />
-            <img src="assests/project-icon.png" alt="icon" />
-          </div>
-          <div class="project-img-odd project-2">
-            <div></div>
-          </div>
-        </div>
-        <div class="hidden project-card-even">
-          <div class="right-gradient-even"></div>
-          <div class="project-img-even project-3">
-            <div></div>
-          </div>
-          <div class="project-block-even">
-            <span>Personal project</span>
-            <p class="project-title">Disease Diet Restaurant Finder</p>
-            <div class="project-desc-even">
-              <p>A mobile application to find restaurants which are best fit to a disease patient diet using their disease name and also providing map display of the restaurant from our place with suggested and safe food items can have.</p>
-              <a class="no-highlight" href="https://github.com/Sanyam-jain30/Disease-Diet-Restaurant-Finder" target="_blank">
-                <div class="github-code-02">
-                  <img class="github-icon-02" src="assests/GitHub.png" alt="code" />
-                  <span>Repository</span>
-                </div>
-              </a>
-            </div>
-            <img src="assests/project-icon.png" alt="icon" />
-            <img src="assests/project-icon.png" alt="icon" />
-          </div>
-        </div>
-        <div class="hidden project-card-odd">
-          <div class="right-gradient-odd"></div>
-          <div class="project-block-odd">
-            <span>Personal project</span>
-            <p class="project-title">Different Hand gesture Recognition using CNN</p>
-            <div class="project-desc-odd">
-              <p>An application which can classify 10 different type of Hand gestures using CNN and python. With an high accuracy. Moreover, the application can also identify the same in real time video or webcam taking care of noise in image.</p>
-              <a class="no-highlight" href="https://github.com/Sanyam-jain30/Different-Hand-Gesture-Recognition-Using-CNN" target="_blank">
-                <div class="github-code-02">
-                  <img class="github-icon-02" src="assests/GitHub.png" alt="code" />
-                  <span>Repository</span>
-                </div>
-              </a>
-            </div>
-            <img src="assests/project-icon.png" alt="icon" />
-            <img src="assests/project-icon.png" alt="icon" />
-          </div>
-          <div class="project-img-odd project-4">
-            <div></div>
-          </div>
-        </div>
-        <div class="hidden project-card-even">
-          <div class="right-gradient-even"></div>
-          <div class="project-img-even project-5">
-            <div></div>
-          </div>
-          <div class="project-block-even">
-            <span>Group project</span>
-            <p class="project-title">Windows Secure Folder using Mobile Authentication</p>
-            <div class="project-desc-even">
-              <p>An windows application to secure windows file/folder of an user using password without storing it in cloud or temp files. The application generate a strong password for file and deliver to the user using SMTP protocol after encryption. </p>
-              <a class="no-highlight" href="https://github.com/Sanyam-jain30/Windows-Secure-Folder-using-Mobile-Authentication" target="_blank">
-                <div class="github-code-02">
-                  <img class="github-icon-02" src="assests/GitHub.png" alt="code" />
-                  <span>Repository</span>
-                </div>
-              </a>
-            </div>
-            <img src="assests/project-icon.png" alt="icon" />
-            <img src="assests/project-icon.png" alt="icon" />
-          </div>
-        </div>
-        <div class="hidden project-card-odd">
-          <div class="right-gradient-odd"></div>
-          <div class="project-block-odd">
-            <span>Group project</span>
-            <p class="project-title">Covid-19 All-in-one website</p>
-            <div class="project-desc-odd">
-              <p>An all-in-one web application for Covid-19 disease. Which contains all of the details including symptoms, precautions, vaccines, blogs, cases count, and guidelines. </p>
-              <a class="no-highlight" href="https://github.com/Sanyam-jain30/Covid_19-All-in-one-Website" target="_blank">
-                <div class="github-code-02">
-                  <img class="github-icon-02" src="assests/GitHub.png" alt="code" />
-                  <span>Repository</span>
-                </div>
-              </a>
-            </div>
-            <img src="assests/project-icon.png" alt="icon" />
-            <img src="assests/project-icon.png" alt="icon" />
-          </div>
-          <div class="project-img-odd project-6">
-            <div></div>
-          </div>
-        </div>
-        <!-- <div class="more">
-          <span class="project-highlight" style="float: right;">+1 more</span>
-        </div> -->
-      </div>
-      <button class="load-more-btn">Load More (3 remaining)</button>
-    </div>
-    <div id="work">
-      <div class="hidden center-gradient"></div>
-      <div class="hidden middle-gradient"></div>
-      <div class="hidden end-gradient"></div>
-      <h1 class="hidden section-title">Works</h1>
-      <div class="hidden tab-container">
-          <input id="all-work" type="radio" name="all-work" checked />
-          <label class="tab" for="all-work" onclick="handleLabelClick('all', 0, 'work', 'work-card', 'work-type')">All<span class="notification">21</span></label>
-          <input id="rapidapi" type="radio" name="rapidapi" />
-          <label class="tab" for="rapidapi" onclick="handleLabelClick('rapidapi', 1, 'work', 'work-card', 'work-type')">Rapid API<span class="notification">8</span></label>
-          <input id="figma" type="radio" name="figma" />
-          <label class="tab" for="figma" onclick="handleLabelClick('figma', 2, 'work', 'work-card', 'work-type')">Figma<span class="notification">7</span></label>
-          <input id="githubcontribution" type="radio" name="githubcontribution" />
-          <label class="tab" for="githubcontribution" onclick="handleLabelClick('githubcontribution', 3, 'work', 'work-card', 'work-type')">Github Contribution<span class="notification">6</span></label>
-          <span class="glider"></span>
+    </section>
 
-          <!-- Dropdown for small screens -->
-          <select class="dropdown" id="tab-dropdown" onchange="handleWorkDropdownChange(event)">
-              <option value="all" selected>All (21)</option>
-              <option value="rapidapi">Rapid API (8)</option>
-              <option value="figma">Figma (7)</option>
-              <option value="githubcontribution">Github Contribution (6)</option>
-          </select>
-      </div>
-      <div class="work-cards">
-        <div class="hidden work-card">
-          <img class="design-image" src="assests/planets-era.jpg">
-          <div class="work-desc">
-            <h2>Planets Era</h2>
-            <div class="work-desc-content">
-              <p>Got planets in mind, let's get there details!</p>
-            </div>
-            <a class="no-highlight" href="https://www.figma.com/community/file/1441589607131518971" target="_blank">
-              <span class="github-code-02 work-detail">
-                <img src="assests/Figma.png" alt="work-destination">
-                <p class="work-type figma">Figma</p>
-              </span>
-            </a>
-          </div>
+    <!-- Achievements Roadmap -->
+    <section id="achievements" data-section-name="Mission Log">
+        <div class="section-header">
+            <div class="section-number">02</div>
+            <h2 class="section-title">MISSION LOG</h2>
         </div>
-        <div class="hidden work-card">
-          <img class="work-img" src="assests/my-address-api.png">
-          <div class="work-desc">
-            <h2>My Address API</h2>
-            <div class="work-desc-content">
-              <p>Welcome to My-Address-API, your ultimate geospatial companion designed to streamline location-related tasks! This API enables you to fetch postal codes, decode latitude and longitude into meaningful addresses, and extract detailed geospatial insights with unparalleled ease.</p>
-            </div>
-            <a class="no-highlight" href="https://rapidapi.com/sanyamjain007/api/my-address-api/" target="_blank">
-              <span class="github-code-02 work-detail">
-                <img src="assests/RapidAPI.png" alt="work-destination">
-                <p class="work-type rapidapi">Rapid API</p>
-              </span>
-            </a>
-          </div>
+        <div class="scroll-indicator">
+            <span><i class="fas fa-arrow-left"></i></span> SCROLL TO EXPLORE TIMELINE <span><i class="fas fa-arrow-right"></i></span>
         </div>
-        <div class="hidden work-card">
-          <img class="design-image" src="assests/Gold&Silver-Logos-Pack.png">
-          <div class="work-desc">
-            <h2>Gold & Silver Logos pack</h2>
-            <div class="work-desc-content">
-              <p>120+ Logos of Social Media, Skills, Companies, Applications, and Systems in Gold and Silver Style. Major icons including windows applications, car companies, coding languages, browsers, etc.</p>
-            </div>
-            <a class="no-highlight" href="https://www.figma.com/community/file/1343618387338040584/gold-silver-logos-pack" target="_blank">
-              <span class="github-code-02 work-detail">
-                <img src="assests/Figma.png" alt="work-destination">
-                <p class="work-type figma">Figma</p>
-              </span>
-            </a>
-          </div>
-        </div>
-        <div class="hidden work-card">
-          <img style="width: 200px" class="work-img" src="assests/github-contribution-04.png">
-          <div class="work-desc">
-            <h2>Added New Pages for Documentations</h2>
-            <div class="work-desc-content">
-              <p>Updated the website to have updated documentations. Created new pages for various versions. Raised PR request and solved the issue.</p>
-            </div>
-            <a class="no-highlight" href="https://github.com/intel-retail/automated-self-checkout/pull/651" target="_blank">
-              <span class="github-code-02 work-detail">
-                <img src="assests/GitHub.png" alt="work-destination">
-                <p class="work-type githubcontribution">Github Contribution</p>
-              </span>
-            </a>
-          </div>
-        </div>
-        <div class="hidden work-card">
-          <img style="width: 200px" class="work-img" src="assests/github-contribution-05.png">
-          <div class="work-desc">
-            <h2>Automated Latest Version Update</h2>
-            <div class="work-desc-content">
-              <p>Programmed a JavaScript algorithm to automatically update the latest page to the latest available version of the repository. Raised PR and solved the issue.</p>
-            </div>
-            <a class="no-highlight" href="https://github.com/intel-retail/automated-self-checkout/pull/649" target="_blank">
-              <span class="github-code-02 work-detail">
-                <img src="assests/GitHub.png" alt="work-destination">
-                <p class="work-type githubcontribution">Github Contribution</p>
-              </span>
-            </a>
-          </div>
-        </div>
-        <div class="hidden work-card">
-          <img style="width: 200px" class="work-img" src="assests/github-contribution-06.png">
-          <div class="work-desc">
-            <h2>New Feature Integration in intel-retail</h2>
-            <div class="work-desc-content">
-              <p>Worked as a team and added a new feature of grafana in intel-retail repository. Raised a PR request and was successfully merged with the repository.</p>
-            </div>
-            <a class="no-highlight" href="https://github.com/intel-retail/automated-self-checkout/pull/640" target="_blank">
-              <span class="github-code-02 work-detail">
-                <img src="assests/GitHub.png" alt="work-destination">
-                <p class="work-type githubcontribution">Github Contribution</p>
-              </span>
-            </a>
-          </div>
-        </div>
-        <div class="hidden work-card">
-          <img style="width: 200px" class="work-img" src="assests/github-contribution-03.png">
-          <div class="work-desc">
-            <h2>Added Version on Frontend</h2>
-            <div class="work-desc-content">
-              <p>Contributed to a open source issue on visual-test-review github repository. Displayed version of the application dynamically in the frontend of the website. Raised a PR request and was successfully merged with the repository.</p>
-            </div>
-            <a class="no-highlight" href="https://github.com/andreas-bauer/visual-test-review/pull/8" target="_blank">
-              <span class="github-code-02 work-detail">
-                <img src="assests/GitHub.png" alt="work-destination">
-                <p class="work-type githubcontribution">Github Contribution</p>
-              </span>
-            </a>
-          </div>
-        </div>
-        <div class="hidden work-card">
-          <img class="work-img" src="assests/topic-based-books-finder-api-high-resolution-logo.png">
-          <div class="work-desc">
-            <h2>Topic Based Books Finder API</h2>
-            <div class="work-desc-content">
-              <p>Introducing Topic Based Books Finder API – the ultimate tool for book enthusiasts. Simply input any topic, whether it's 'happy,' 'magic,' or anything else, and instantly discover a curated list of books along with their authors. Get insightful reviews to help you make the perfect choice for your next read.</p>
-            </div>
-            <a class="no-highlight" href="https://rapidapi.com/sanyamjain007/api/topic-based-books-finder-api/" target="_blank">
-              <span class="github-code-02 work-detail">
-                <img src="assests/RapidAPI.png" alt="work-destination">
-                <p class="work-type rapidapi">Rapid API</p>
-              </span>
-            </a>
-          </div>
-        </div>
-        <div class="hidden work-card">
-          <img class="design-image" src="assests/space-site.png">
-          <div class="work-desc">
-            <h2>Space Site</h2>
-            <div class="work-desc-content">
-              <p>A space site design with varity of slots to display upcoming or past missions. Make the design more creative with beautiful rocket package and a wild information area on your only "space site".</p>
-            </div>
-            <a class="no-highlight" href="https://www.figma.com/community/file/1341434532245918356/space-site" target="_blank">
-              <span class="github-code-02 work-detail">
-                <img src="assests/Figma.png" alt="work-destination">
-                <p class="work-type figma">Figma</p>
-              </span>
-            </a>
-          </div>
-        </div>
-        <div class="hidden work-card">
-          <img class="work-img" src="assests/place-population-finder-api.png">
-          <div class="work-desc">
-            <h2>Place population Finder API</h2>
-            <div class="work-desc-content">
-              <p>Need population data for any Village, City, Town, District, State, Country or even Continent? Place-Population-Finder API delivers! Get instant, accurate figures with one simple call. Optimize resources, target markets, and make informed decisions.</p>
-            </div>
-            <a class="no-highlight" href="https://rapidapi.com/sanyamjain007/api/place-population-finder-api/" target="_blank">
-              <span class="github-code-02 work-detail">
-                <img src="assests/RapidAPI.png" alt="work-destination">
-                <p class="work-type rapidapi">Rapid API</p>
-              </span>
-            </a>
-          </div>
-        </div>
-        <div class="hidden work-card">
-          <img class="design-image" src="assests/library-center-home-page.jpg">
-          <div class="work-desc">
-            <h2>Library Center Home Page</h2>
-            <div class="work-desc-content">
-              <p>A visually striking homepage harmonizing aesthetics and functionality. Engage effortlessly with an intuitive search bar, while dynamic text elements highlight book count, store statistics, and our growing community. Immerse users in a creative, user-friendly space that celebrates the essence of literature. Happy Design.</p>
-            </div>
-            <a class="no-highlight" href="https://www.figma.com/community/file/1330881641301452902/library-center-home-page" target="_blank">
-              <span class="github-code-02 work-detail">
-                <img src="assests/Figma.png" alt="work-destination">
-                <p class="work-type figma">Figma</p>
-              </span>
-            </a>
-          </div>
-        </div>
-        <div class="hidden work-card">
-          <img class="design-image" src="assests/car-booking-home-page.png">
-          <div class="work-desc">
-            <h2>Car Booking Home Page</h2>
-            <div class="work-desc-content">
-              <p>Discover the epitome of car booking elegance with our captivating UI. Seamlessly explore premium vehicles, check vital details like speed and auto-pilot, set your arrival date, and unveil competitive pricing. A perfect blend of aesthetics and functionality awaits you.</p>
-            </div>
-            <a class="no-highlight" href="https://www.figma.com/community/file/1330870654313039966/car-booking-home-page" target="_blank">
-              <span class="github-code-02 work-detail">
-                <img src="assests/Figma.png" alt="work-destination">
-                <p class="work-type figma">Figma</p>
-              </span>
-            </a>
-          </div>
-        </div>
-        <div class="hidden work-card">
-          <img class="work-img" src="assests/github-contribution-01.png">
-          <div class="work-desc">
-            <h2>Provided Editing Movie Feature</h2>
-            <div class="work-desc-content">
-              <p>Contributed to a open source issue on movie-time github repository. Where added a new functionality of editing movie feature on discord bot using python language. Raised a PR request and was successfully merged with the repository of movie-time.</p>
-            </div>
-            <a class="no-highlight" href="https://github.com/nrossetti/movie-time/pull/14" target="_blank">
-              <span class="github-code-02 work-detail">
-                <img src="assests/GitHub.png" alt="work-destination">
-                <p class="work-type githubcontribution">Github Contribution</p>
-              </span>
-            </a>
-          </div>
-        </div>
-        <div class="hidden work-card">
-          <img class="work-img" src="assests/mood-based-quote-api.png">
-          <div class="work-desc">
-            <h2>Mood Based Quote API</h2>
-            <div class="work-desc-content">
-              <p>Feeling down? Uplifted? Stuck? Find the perfect quote for every mood with the Mood Based Quote API. Unlock a world of wisdom and elevate your apps and platforms with the power of quotes.</p>
-            </div>
-            <a class="no-highlight" href="https://rapidapi.com/sanyamjain007/api/mood-based-quote-api/" target="_blank">
-              <span class="github-code-02 work-detail">
-                <img src="assests/RapidAPI.png" alt="work-destination">
-                <p class="work-type rapidapi">Rapid API</p>
-              </span>
-            </a>
-          </div>
-        </div>
-        <div class="hidden work-card">
-          <img class="work-img" src="assests/whose-birthday-finder-api-high-resolution-logo.png">
-          <div class="work-desc">
-            <h2>Whose Birthday Finder API</h2>
-            <div class="work-desc-content">
-              <p>Want to know whose birthdays were on a specific day? You are at right place. This API will find popular and important people whose birthdays are on the given date.</p>
-            </div>
-            <a class="no-highlight" href="https://rapidapi.com/sanyamjain007/api/whose-birthday-finder-api/" target="_blank">
-              <span class="github-code-02 work-detail">
-                <img src="assests/RapidAPI.png" alt="work-destination">
-                <p class="work-type rapidapi">Rapid API</p>
-              </span>
-            </a>
-          </div>
-        </div>
-        <div class="hidden work-card">
-          <img class="work-img" src="assests/day-special-finder-api-high-resolution-logo.png">
-          <div class="work-desc">
-            <h2>Day Special Finder API</h2>
-            <div class="work-desc-content">
-              <p>Want to know what’s special on the specific date? Send a request here and get details of all selective, events, births, holidays, and even deaths.</p>
-            </div>
-            <a class="no-highlight" href="https://rapidapi.com/sanyamjain007/api/day-special-finder-api/" target="_blank">
-              <span class="github-code-02 work-detail">
-                <img src="assests/RapidAPI.png" alt="work-destination">
-                <p class="work-type rapidapi">Rapid API</p>
-              </span>
-            </a>
-          </div>
-        </div>
-        <div class="hidden work-card">
-          <img class="work-img" src="assests/github-contribution-02.png">
-          <div class="work-desc">
-            <h2>Imporved UI Design</h2>
-            <div class="work-desc-content">
-              <p>Contributed to a open source issue on social-space-zone github repository. Enhanced UI design of 'start a post' functionality with suggested UI design and further made operational changes in the web page using HTML, CSS, and JavaScript.</p>
-            </div>
-            <a class="no-highlight" href="https://github.com/krishna-nayak/social-space-zone/pull/17" target="_blank">
-              <span class="github-code-02 work-detail">
-                <img src="assests/GitHub.png" alt="work-destination">
-                <p class="work-type githubcontribution">Github Contribution</p>
-              </span>
-            </a>
-          </div>
-        </div>
-        <div class="hidden work-card">
-          <img class="work-img" src="assests/period-rashifal-api-high-resolution-logo.png">
-          <div class="work-desc">
-            <h2>Period Rashifal API</h2>
-            <div class="work-desc-content">
-              <p>The Period Rashifal API provides accurate and personalized horoscope predictions for all twelve Rashis, covering yesterday, today, and tomorrow, as well as weekly, monthly, and yearly forecasts.</p>
-            </div>
-            <a class="no-highlight" href="https://rapidapi.com/sanyamjain007/api/period-rashifal-api/" target="_blank">
-              <span class="github-code-02 work-detail">
-                <img src="assests/RapidAPI.png" alt="work-destination">
-                <p class="work-type rapidapi">Rapid API</p>
-              </span>
-            </a>
-          </div>
-        </div>
-        <div class="hidden work-card">
-          <img class="work-img" src="assests/daily-rashifal-api-high-resolution-logo-black.png">
-          <div class="work-desc">
-            <h2>Daily Rashifal API</h2>
-            <div class="work-desc-content">
-              <p>The Daily Rashifal API offers current Vedic astrology horoscope predictions for all twelve Rashis (Aries, Taurus, Gemini, Cancer, Leo, Virgo, Libra, Scorpio, Sagittarius, Capricorn, Aquarius, and Pisces).</p>
-            </div>
-            <a class="no-highlight" href="https://rapidapi.com/sanyamjain007/api/daily-rashifal-api/" target="_blank">
-              <span class="github-code-02 work-detail">
-                <img src="assests/RapidAPI.png" alt="work-destination">
-                <p class="work-type rapidapi">Rapid API</p>
-              </span>
-            </a>
-          </div>
-        </div>        
-        <div class="hidden work-card">
-          <img class="design-image" src="assests/cleveland-website-redesign.png">
-          <div class="work-desc">
-            <h2>Cleveland Website Redesign</h2>
-            <div class="work-desc-content">
-              <p>Redesign Cleveland city website with new colors and illustrations. A website design incorporating live press meets, recent events, upcoming events, full-listed contact details, and a place to explore many beautiful places of Cleveland.</p>
-            </div>
-            <a class="no-highlight" href="https://www.figma.com/community/file/1249991871020587984/cleveland-website-redesign" target="_blank">
-              <span class="github-code-02 work-detail">
-                <img src="assests/Figma.png" alt="work-destination">
-                <p class="work-type figma">Figma</p>
-              </span>
-            </a>
-          </div>
-        </div>
-        <div class="hidden work-card">
-          <img class="design-image" src="assests/foundit-redesign.png">
-          <div class="work-desc">
-            <h2>Foundit Redesign</h2>
-            <div class="work-desc-content">
-              <p>Redesign of Foundit website with new illustrations and colorful color palette. A web design with all features of current website and also with more minor interactions for users. Complete prototype of Desktop view and design of Mobile view.</p>
-            </div>
-            <a class="no-highlight" href="https://www.figma.com/community/file/1249994527731921876/foundit-redesign-mobile-desktop-view" target="_blank">
-              <span class="github-code-02 work-detail">
-                <img src="assests/Figma.png" alt="work-destination">
-                <p class="work-type figma">Figma</p>
-              </span>
-            </a>
-          </div>
-        </div>
-      </div>
-      <button class="load-more-btn">Load More (13 remaining)</button>
-    </div>
-    <div class="end-container">
-      Thank you for visiting my portfolio, Sanyam Jain
-    </div>
+        <div class="roadmap-container">
+            <div class="roadmap">
+                <!-- 2013 -->
+                <div class="year-section">
+                    <div class="year-marker"></div>
+                    <div class="year-label">2013</div>
+                    <div class="achievements-list">
+                        <div class="achievement-item certification">
+                            <span class="achievement-type-tag certification">Certification</span>
+                            <div class="achievement-title">Abacus & IT Wizard Certificate</div>
+                            <div class="achievement-venue">NIIT & School - All Levels Cleared</div>
+                        </div>
+                        <div class="achievement-item hackathon">
+                            <span class="achievement-type-tag hackathon">Exam</span>
+                            <div class="achievement-title">National Science Talent Search</div>
+                            <div class="achievement-venue">Unified Council - Cleared</div>
+                        </div>
+                    </div>
+                </div>
 
-    <script type="text/javascript" src="script.js"></script>
+                <!-- 2018 -->
+                <div class="year-section">
+                    <div class="year-marker"></div>
+                    <div class="year-label">2018</div>
+                    <div class="achievements-list">
+                        <div class="achievement-item award">
+                            <span class="achievement-type-tag award">Award</span>
+                            <div class="achievement-title">Education Promotion Award</div>
+                            <div class="achievement-venue">Siwanchi Jain Sangh, Hyderabad</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2020 -->
+                <div class="year-section">
+                    <div class="year-marker"></div>
+                    <div class="year-label">2020</div>
+                    <div class="achievements-list">
+                        <div class="achievement-item award">
+                            <span class="achievement-type-tag award">Award</span>
+                            <div class="achievement-title">Silver Medal & Achievement Certificate</div>
+                            <div class="achievement-venue">Terapanth Professional Forum</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2022 -->
+                <div class="year-section">
+                    <div class="year-marker"></div>
+                    <div class="year-label">2022</div>
+                    <div class="achievements-list">
+                        <div class="achievement-item volunteer">
+                            <span class="achievement-type-tag volunteer">Leadership</span>
+                            <div class="achievement-title">ML Mentor - IEEE TEMS VIT</div>
+                            <div class="achievement-venue">Mentored 500+ students</div>
+                        </div>
+                        <div class="achievement-item certification">
+                            <span class="achievement-type-tag certification">Speaker</span>
+                            <div class="achievement-title">ML & Web Tech Sessions</div>
+                            <div class="achievement-venue">VIT - 100+ attendees</div>
+                        </div>
+                        <div class="achievement-item volunteer">
+                            <span class="achievement-type-tag volunteer">Team</span>
+                            <div class="achievement-title">Developer - SEDS Team Ardra</div>
+                            <div class="achievement-venue">Drone Path Planning with Python</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2023 -->
+                <div class="year-section" data-year="2023">
+                    <div class="year-marker"></div>
+                    <div class="year-label">2023</div>
+                    <div class="achievements-list">
+                        <div class="achievement-item volunteer">
+                            <span class="achievement-type-tag volunteer">Leadership</span>
+                            <div class="achievement-title">Secretary - IEEE TEMS VIT</div>
+                            <div class="achievement-venue">Board Member 2023-24</div>
+                        </div>
+                        <div class="achievement-item hackathon">
+                            <span class="achievement-type-tag hackathon">1st Place</span>
+                            <div class="achievement-title">Epidemiology Hackathon</div>
+                            <div class="achievement-venue">Shaastra 2023, IIT Madras</div>
+                        </div>
+                        <div class="achievement-item hackathon">
+                            <span class="achievement-type-tag hackathon">1st Place</span>
+                            <div class="achievement-title">Pragyan'23</div>
+                            <div class="achievement-venue">JC Bose University, Haryana</div>
+                        </div>
+                        <div class="achievement-item hackathon">
+                            <span class="achievement-type-tag hackathon">2nd Place</span>
+                            <div class="achievement-title">Tech Savishkaar</div>
+                            <div class="achievement-venue">Vasavi College, Hyderabad</div>
+                        </div>
+                        <div class="achievement-item hackathon hidden-achievement">
+                            <span class="achievement-type-tag hackathon">3rd Place</span>
+                            <div class="achievement-title">Hack-AI-Thon</div>
+                            <div class="achievement-venue">Karpagam College, Tamil Nadu</div>
+                        </div>
+                        <div class="achievement-item hackathon hidden-achievement">
+                            <span class="achievement-type-tag hackathon">3rd Place</span>
+                            <div class="achievement-title">AI PromptThon 2.0</div>
+                            <div class="achievement-venue">Textify Company</div>
+                        </div>
+                        <div class="achievement-item hackathon hidden-achievement">
+                            <span class="achievement-type-tag hackathon">Finalist</span>
+                            <div class="achievement-title">Code4GovTech'23</div>
+                            <div class="achievement-venue">Open-source Contribution</div>
+                        </div>
+                        <div class="achievement-item certification hidden-achievement">
+                            <span class="achievement-type-tag certification">Paper</span>
+                            <div class="achievement-title">56th Carnahan Conference</div>
+                            <div class="achievement-venue">Security Technology</div>
+                        </div>
+                        <div class="achievement-item certification hidden-achievement">
+                            <span class="achievement-type-tag certification">Paper</span>
+                            <div class="achievement-title">8th ICTCS Conference</div>
+                            <div class="achievement-venue">Information & Communication</div>
+                        </div>
+                        <div class="achievement-item certification hidden-achievement">
+                            <span class="achievement-type-tag certification">Paper</span>
+                            <div class="achievement-title">5th Soft Computing Conference</div>
+                            <div class="achievement-venue">Engineering Applications</div>
+                        </div>
+                        <button class="year-load-more" data-year="2023">+ 6 More</button>
+                    </div>
+                </div>
+
+                <!-- 2024 -->
+                <div class="year-section" data-year="2024">
+                    <div class="year-marker"></div>
+                    <div class="year-label">2024</div>
+                    <div class="achievements-list">
+                        <div class="achievement-item volunteer">
+                            <span class="achievement-type-tag volunteer">Open Source</span>
+                            <div class="achievement-title">6 Open-Source Contributions</div>
+                            <div class="achievement-venue">Including Intel Repository</div>
+                        </div>
+                        <div class="achievement-item award">
+                            <span class="achievement-type-tag award">Scholarship</span>
+                            <div class="achievement-title">$6000 ASU Scholarship</div>
+                            <div class="achievement-venue">Arizona State University</div>
+                        </div>
+                        <div class="achievement-item hackathon">
+                            <span class="achievement-type-tag hackathon">1st Place</span>
+                            <div class="achievement-title">Hack SoDA 2024</div>
+                            <div class="achievement-venue">Arizona State University</div>
+                        </div>
+                        <div class="achievement-item hackathon">
+                            <span class="achievement-type-tag hackathon">Submission</span>
+                            <div class="achievement-title">Principled Innovation Academy</div>
+                            <div class="achievement-venue">Problem Solving Event @ ASU</div>
+                        </div>
+                        <div class="achievement-item certification hidden-achievement">
+                            <span class="achievement-type-tag certification">Paper</span>
+                            <div class="achievement-title">ICAMADA Conference</div>
+                            <div class="achievement-venue">Applied Mathematics & Data Analytics</div>
+                        </div>
+                        <button class="year-load-more" data-year="2024">+ 1 More</button>
+                    </div>
+                </div>
+
+                <!-- 2025 -->
+                <div class="year-section" data-year="2025">
+                    <div class="year-marker"></div>
+                    <div class="year-label">2025</div>
+                    <div class="achievements-list">
+                        <div class="achievement-item certification" style="border: 2px solid var(--accent); box-shadow: 0 0 20px rgba(57, 255, 20, 0.3);">
+                            <span class="achievement-type-tag hackathon">CURRENT</span>
+                            <div class="achievement-title" style="color: var(--accent);">Spring Internship @ FOX Corporation</div>
+                            <div class="achievement-venue">Latest Achievement Unlocked!</div>
+                        </div>
+                        <div class="achievement-item hackathon">
+                            <span class="achievement-type-tag hackathon">1st Place</span>
+                            <div class="achievement-title">DevHacks Hackathon</div>
+                            <div class="achievement-venue">Arizona State University</div>
+                        </div>
+                        <div class="achievement-item hackathon">
+                            <span class="achievement-type-tag hackathon">1st Place</span>
+                            <div class="achievement-title">Innovation Hack 2025</div>
+                            <div class="achievement-venue">Arizona State University</div>
+                        </div>
+                        <div class="achievement-item hackathon">
+                            <span class="achievement-type-tag hackathon">1st Place</span>
+                            <div class="achievement-title">Hacks for Humanity 2025</div>
+                            <div class="achievement-venue">Arizona State University</div>
+                        </div>
+                        <div class="achievement-item hackathon hidden-achievement">
+                            <span class="achievement-type-tag hackathon">2nd Place</span>
+                            <div class="achievement-title">AI Hackathon</div>
+                            <div class="achievement-venue">Arizona State University</div>
+                        </div>
+                        <div class="achievement-item hackathon hidden-achievement">
+                            <span class="achievement-type-tag hackathon">2nd Place</span>
+                            <div class="achievement-title">AI Agents Hackathon</div>
+                            <div class="achievement-venue">Arizona State University</div>
+                        </div>
+                        <div class="achievement-item hackathon hidden-achievement">
+                            <span class="achievement-type-tag hackathon">3rd Place</span>
+                            <div class="achievement-title">Intel Hackathon</div>
+                            <div class="achievement-venue">Arizona State University</div>
+                        </div>
+                        <button class="year-load-more" data-year="2025">+ 3 More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" data-section-name="Field Operations">
+        <div class="section-header">
+            <div class="section-number">03</div>
+            <h2 class="section-title">FIELD OPERATIONS</h2>
+        </div>
+        <div class="experience-timeline">
+            <div class="experience-item">
+                <div class="experience-dot"></div>
+                <div class="experience-card upcoming">
+                    <div class="upcoming-badge"><i class="fas fa-star"></i> UPCOMING</div>
+                    <div class="experience-date">[ FEB 2026 ]</div>
+                    <div class="experience-title">FOX Intern</div>
+                    <div class="experience-company">FOX Corporation</div>
+                    <div class="experience-description">Spring 2026 internship focusing on software engineering and development at one of the world's leading media companies.</div>
+                </div>
+            </div>
+            <div class="experience-item">
+                <div class="experience-dot"></div>
+                <div class="experience-card">
+                    <div class="experience-date">[ MAY 2025 - AUG 2025 ]</div>
+                    <div class="experience-title">Summer Broadcast AI Intern</div>
+                    <div class="experience-company">Skyworks Solutions Inc.</div>
+                    <div class="experience-description">Engineered and deployed a Python-based, AI-powered macro expander using MCP tools to automate test plan conversion, reducing coding time by 75%. Created supplementary AI Agents for lint solving and test writing, leveraging Jira and Confluence for feedback.</div>
+                </div>
+            </div>
+            <div class="experience-item">
+                <div class="experience-dot"></div>
+                <div class="experience-card">
+                    <div class="experience-date">[ JAN 2024 - JUNE 2024 ]</div>
+                    <div class="experience-title">Project Student</div>
+                    <div class="experience-company">National Remote Sensing Center, ISRO</div>
+                    <div class="experience-description">Created and deployed multiple geospatial and exhibition robot applications coordinating with cross-functional teams. Delivered application performing geospatial data analysis 96% faster, showcased at intra-company and public events.</div>
+                </div>
+            </div>
+            <div class="experience-item">
+                <div class="experience-dot"></div>
+                <div class="experience-card">
+                    <div class="experience-date">[ JAN 2022 - JUN 2022 ]</div>
+                    <div class="experience-title">Full Stack Web Developer</div>
+                    <div class="experience-company">Papersdrop</div>
+                    <div class="experience-description">Developed backend APIs using Flask, Node.js, and MongoDB for user management with authentication. Implemented and debugged webpages with ReactJS and HTML+CSS, achieving 70% increase in user satisfaction.</div>
+                </div>
+            </div>
+            <div class="experience-item">
+                <div class="experience-dot"></div>
+                <div class="experience-card">
+                    <div class="experience-date">[ DEC 2021 - JAN 2022 ]</div>
+                    <div class="experience-title">Cyber Security & Ethical Hacking Intern</div>
+                    <div class="experience-company">Inmovidu</div>
+                    <div class="experience-description">Performed ethical hacking projects using Hydra, John the Ripper, and NSE scripts for password attacks and vulnerability assessments. Executed vulnerability scans and performed steganography on images to conceal videos.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" data-section-name="Skill Arsenal">
+        <div class="section-header">
+            <div class="section-number">04</div>
+            <h2 class="section-title">SKILL ARSENAL</h2>
+        </div>
+        <div class="skills-container">
+            <!-- Programming Languages -->
+            <div class="skill-category">
+                <div class="skill-category-header">
+                    <div class="skill-category-icon"><i class="fas fa-code"></i></div>
+                    <div class="skill-category-title">Programming Languages</div>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-item highlight">Python</div>
+                    <div class="skill-item highlight">JavaScript</div>
+                    <div class="skill-item">HTML</div>
+                    <div class="skill-item">CSS</div>
+                    <div class="skill-item highlight">Java</div>
+                    <div class="skill-item">SQL</div>
+                    <div class="skill-item">C</div>
+                    <div class="skill-item">C++</div>
+                    <div class="skill-item">Dart</div>
+                    <div class="skill-item">jQuery</div>
+                    <div class="skill-item">PHP</div>
+                    <div class="skill-item">C#</div>
+                </div>
+            </div>
+
+            <!-- Technologies -->
+            <div class="skill-category">
+                <div class="skill-category-header">
+                    <div class="skill-category-icon"><i class="fas fa-microchip"></i></div>
+                    <div class="skill-category-title">Technologies</div>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-item highlight">Machine Learning</div>
+                    <div class="skill-item highlight">Full Stack Web Development</div>
+                    <div class="skill-item">App Development</div>
+                    <div class="skill-item">Git</div>
+                    <div class="skill-item">GitHub</div>
+                    <div class="skill-item">Docker</div>
+                    <div class="skill-item highlight">NLP</div>
+                    <div class="skill-item">Ollama</div>
+                    <div class="skill-item highlight">LLM</div>
+                    <div class="skill-item">MCP</div>
+                </div>
+            </div>
+
+            <!-- Frameworks -->
+            <div class="skill-category">
+                <div class="skill-category-header">
+                    <div class="skill-category-icon"><i class="fas fa-layer-group"></i></div>
+                    <div class="skill-category-title">Frameworks</div>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-item highlight">React.js</div>
+                    <div class="skill-item highlight">Node.js</div>
+                    <div class="skill-item">TailwindCSS</div>
+                    <div class="skill-item">Flask</div>
+                    <div class="skill-item">Express.js</div>
+                    <div class="skill-item highlight">FastAPI</div>
+                    <div class="skill-item">Redux</div>
+                    <div class="skill-item">RESTful APIs</div>
+                    <div class="skill-item">Flutter</div>
+                    <div class="skill-item">Angular.js</div>
+                    <div class="skill-item">Copilot Studio</div>
+                </div>
+            </div>
+
+            <!-- Tools and Databases -->
+            <div class="skill-category">
+                <div class="skill-category-header">
+                    <div class="skill-category-icon"><i class="fas fa-database"></i></div>
+                    <div class="skill-category-title">Tools & Databases</div>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-item highlight">PyTorch</div>
+                    <div class="skill-item">Postgres</div>
+                    <div class="skill-item">MySQL</div>
+                    <div class="skill-item">Firebase</div>
+                    <div class="skill-item highlight">AWS & Lambda</div>
+                    <div class="skill-item">Atlassian</div>
+                    <div class="skill-item highlight">TensorFlow</div>
+                    <div class="skill-item">SVN</div>
+                    <div class="skill-item">Kaggle</div>
+                    <div class="skill-item">Linux</div>
+                </div>
+            </div>
+
+            <!-- Soft Skills -->
+            <div class="skill-category">
+                <div class="skill-category-header">
+                    <div class="skill-category-icon"><i class="fas fa-users"></i></div>
+                    <div class="skill-category-title">Soft Skills</div>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-item highlight">Problem Solving</div>
+                    <div class="skill-item highlight">Leadership</div>
+                    <div class="skill-item highlight">Team Collaboration</div>
+                    <div class="skill-item">Interpersonal Communication</div>
+                    <div class="skill-item">Time Management</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" data-section-name="Credentials Unlocked">
+        <div class="section-header">
+            <div class="section-number">05</div>
+            <h2 class="section-title">CREDENTIALS UNLOCKED</h2>
+        </div>
+        <div class="certs-container">
+            <!-- 2025 Certifications -->
+            <div class="cert-year-group">
+                <div class="cert-year-label">2025</div>
+
+                <!-- ASU Digital Credentials Group -->
+                <div class="asu-credentials-group">
+                    <div class="asu-credentials-header">
+                        <div class="asu-credentials-icon"><i class="fas fa-award"></i></div>
+                        <div>
+                            <div class="asu-credentials-title">ASU Digital Credentials</div>
+                            <div class="asu-credentials-subtitle">Arizona State University • Feb 2025</div>
+                        </div>
+                    </div>
+                    <div class="credentials-tags">
+                        <span class="credential-tag"><i class="fas fa-user-tie"></i> Professionalism</span>
+                        <span class="credential-tag"><i class="fas fa-balance-scale"></i> Equity & Inclusion</span>
+                        <span class="credential-tag"><i class="fas fa-comments"></i> Communication</span>
+                        <span class="credential-tag"><i class="fas fa-crown"></i> Leadership</span>
+                        <span class="credential-tag"><i class="fas fa-brain"></i> Critical Thinking</span>
+                        <span class="credential-tag"><i class="fas fa-users"></i> Teamwork</span>
+                        <span class="credential-tag"><i class="fas fa-rocket"></i> Career & Self-development</span>
+                        <span class="credential-tag"><i class="fas fa-microchip"></i> Technology Adaptability</span>
+                    </div>
+                </div>
+
+                <div class="certs-grid">
+                    <div class="cert-card cert-badge">
+                        <div class="cert-icon"><i class="fas fa-robot"></i></div>
+                        <div class="cert-info">
+                            <div class="cert-title">AI Model Development (Intermediate)</div>
+                            <div class="cert-issuer">ASU School of Arts, Media & Engineering</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2023 Certifications -->
+            <div class="cert-year-group">
+                <div class="cert-year-label">2023</div>
+                <div class="certs-grid">
+                    <div class="cert-card">
+                        <div class="cert-icon"><i class="fas fa-brain"></i></div>
+                        <div class="cert-info">
+                            <div class="cert-title">Getting Started with Enterprise-grade AI</div>
+                            <div class="cert-issuer">Aug 2023</div>
+                        </div>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-icon"><i class="fas fa-tree"></i></div>
+                        <div class="cert-info">
+                            <div class="cert-title">Forest and Their Management</div>
+                            <div class="cert-issuer">NPTEL • IIT Kanpur • Apr 2023</div>
+                        </div>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-icon"><i class="fas fa-shield-alt"></i></div>
+                        <div class="cert-info">
+                            <div class="cert-title">Introduction to Forms of Cyber Security</div>
+                            <div class="cert-issuer">Mar 2023</div>
+                        </div>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-icon"><i class="fab fa-microsoft"></i></div>
+                        <div class="cert-info">
+                            <div class="cert-title">Microsoft SC-900</div>
+                            <div class="cert-issuer">Security, Compliance & Identity • Jan 2023</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" data-section-name="Project Arsenal">
+        <div class="section-header">
+            <div class="section-number">06</div>
+            <h2 class="section-title">PROJECT ARSENAL</h2>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-card-top">
+                    <div class="project-icon"><i class="fas fa-eye-slash"></i></div>
+                    <div class="project-info">
+                        <div class="project-type">// Group Project</div>
+                        <div class="project-name">Vision Vault</div>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="project-description">Privacy-focused video processing with face detection, blurring, and encrypted restoration using Fernet encryption for secure content protection.</div>
+                    <div class="project-tech">
+                        <span class="tech-tag primary">Python</span>
+                        <span class="tech-tag primary">OpenCV</span>
+                        <span class="tech-tag">Fernet</span>
+                        <span class="tech-tag">Face Detection</span>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <a href="https://github.com/Sanyam-jain30/Vision-Vault" target="_blank" class="project-link">
+                        <i class="fab fa-github"></i> View Code <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <span class="project-status"><i class="fas fa-circle"></i> Completed</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-card-top">
+                    <div class="project-icon"><i class="fas fa-utensils"></i></div>
+                    <div class="project-info">
+                        <div class="project-type">// Group Project</div>
+                        <div class="project-name">Full Plates</div>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="project-description">Web platform connecting restaurants with NGOs to reduce food waste and alleviate hunger through smart donation management system.</div>
+                    <div class="project-tech">
+                        <span class="tech-tag primary">React.js</span>
+                        <span class="tech-tag primary">Node.js</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">Express</span>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <a href="https://github.com/Sanyam-jain30/full-plates" target="_blank" class="project-link">
+                        <i class="fab fa-github"></i> View Code <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <span class="project-status"><i class="fas fa-circle"></i> Completed</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-card-top">
+                    <div class="project-icon"><i class="fas fa-recycle"></i></div>
+                    <div class="project-info">
+                        <div class="project-type">// Personal Project</div>
+                        <div class="project-name">Trash Sale</div>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="project-description">AI-powered platform using image recognition to identify waste value. Upload, sell, and earn while promoting recycling initiatives.</div>
+                    <div class="project-tech">
+                        <span class="tech-tag primary">Python</span>
+                        <span class="tech-tag primary">TensorFlow</span>
+                        <span class="tech-tag">CNN</span>
+                        <span class="tech-tag">Flask</span>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <a href="https://github.com/Sanyam-jain30/Trash-Seller" target="_blank" class="project-link">
+                        <i class="fab fa-github"></i> View Code <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <span class="project-status"><i class="fas fa-circle"></i> Completed</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-card-top">
+                    <div class="project-icon"><i class="fas fa-heartbeat"></i></div>
+                    <div class="project-info">
+                        <div class="project-type">// Personal Project</div>
+                        <div class="project-name">Disease Diet Restaurant Finder</div>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="project-description">Mobile app helping patients find restaurants with suitable food options based on their health conditions and dietary needs.</div>
+                    <div class="project-tech">
+                        <span class="tech-tag primary">Flutter</span>
+                        <span class="tech-tag primary">Dart</span>
+                        <span class="tech-tag">Google Maps API</span>
+                        <span class="tech-tag">Firebase</span>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <a href="https://github.com/Sanyam-jain30/Disease-Diet-Restaurant-Finder" target="_blank" class="project-link">
+                        <i class="fab fa-github"></i> View Code <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <span class="project-status"><i class="fas fa-circle"></i> Completed</span>
+                </div>
+            </div>
+            <!-- Hidden Projects -->
+            <div class="project-card hidden-project">
+                <div class="project-card-top">
+                    <div class="project-icon"><i class="fas fa-hand-paper"></i></div>
+                    <div class="project-info">
+                        <div class="project-type">// Personal Project</div>
+                        <div class="project-name">Hand Gesture Recognition</div>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="project-description">CNN-based application classifying 10 different hand gestures with high accuracy, supporting real-time video input for interactive applications.</div>
+                    <div class="project-tech">
+                        <span class="tech-tag primary">Python</span>
+                        <span class="tech-tag primary">CNN</span>
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">OpenCV</span>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <a href="https://github.com/Sanyam-jain30/Different-Hand-Gesture-Recognition-Using-CNN" target="_blank" class="project-link">
+                        <i class="fab fa-github"></i> View Code <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <span class="project-status"><i class="fas fa-circle"></i> Completed</span>
+                </div>
+            </div>
+            <div class="project-card hidden-project">
+                <div class="project-card-top">
+                    <div class="project-icon"><i class="fas fa-lock"></i></div>
+                    <div class="project-info">
+                        <div class="project-type">// Group Project</div>
+                        <div class="project-name">Windows Secure Folder</div>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="project-description">Windows application securing files with strong password encryption and two-factor authentication via SMTP email verification.</div>
+                    <div class="project-tech">
+                        <span class="tech-tag primary">C#</span>
+                        <span class="tech-tag primary">.NET</span>
+                        <span class="tech-tag">SMTP</span>
+                        <span class="tech-tag">Encryption</span>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <a href="https://github.com/Sanyam-jain30/Windows-Secure-Folder-using-Mobile-Authentication" target="_blank" class="project-link">
+                        <i class="fab fa-github"></i> View Code <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <span class="project-status"><i class="fas fa-circle"></i> Completed</span>
+                </div>
+            </div>
+            <div class="project-card hidden-project">
+                <div class="project-card-top">
+                    <div class="project-icon"><i class="fas fa-virus"></i></div>
+                    <div class="project-info">
+                        <div class="project-type">// Group Project</div>
+                        <div class="project-name">Covid-19 All-in-one Website</div>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="project-description">Comprehensive web application featuring symptoms checker, precautions guide, vaccine info, live case counts, and official guidelines.</div>
+                    <div class="project-tech">
+                        <span class="tech-tag primary">HTML</span>
+                        <span class="tech-tag primary">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">API</span>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <a href="https://github.com/Sanyam-jain30/Covid_19-All-in-one-Website" target="_blank" class="project-link">
+                        <i class="fab fa-github"></i> View Code <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <span class="project-status"><i class="fas fa-circle"></i> Completed</span>
+                </div>
+            </div>
+        </div>
+        <button class="load-more-btn" id="load-more-projects">
+            <i class="fas fa-plus"></i> Load More (3 remaining)
+        </button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">// SANYAM_JAIN</div>
+            <div class="footer-text">[ MISSION STATUS: SEEKING FULL TIME ] | &copy; 2025</div>
+            <div class="footer-social">
+                <a href="mailto:sanyamjain3003@gmail.com" class="social-link" target="_blank" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://github.com/Sanyam-jain30" class="social-link" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/sanyam-jain-611577237/" class="social-link" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

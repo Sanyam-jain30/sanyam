@@ -1,362 +1,299 @@
-// const researchAddOn = document.getElementsByClassName("more")[0];
+// Loading Screen - NO AUTO SCROLL
+document.addEventListener('DOMContentLoaded', function() {
+    const loadingBar = document.getElementById('loading-bar');
+    const loadingPercentage = document.getElementById('loading-percentage');
+    const loadingScreen = document.getElementById('loading-screen');
+    let progress = 0;
 
-// researchAddOn.addEventListener('click', () => {
-//     var researchCards = document.getElementsByClassName("research-card");
-//     for(let card of researchCards){
-//         if(card.style.display == "none"){
-//             card.style.display = "flex";
-//         }
-//     }
-
-//     researchAddOn.style.display = "none";
-// });
-
-// JavaScript to toggle the dropdown menu
-const dropdown = document.querySelector('.dropdown');
-
-document.querySelector('.dropbtn').addEventListener('click', function() {
-  dropdown.classList.toggle('show');
+    const loadingInterval = setInterval(() => {
+        progress += Math.random() * 15;
+        if (progress >= 100) {
+            progress = 100;
+            clearInterval(loadingInterval);
+            setTimeout(() => {
+                loadingScreen.classList.add('hidden');
+            }, 500);
+        }
+        loadingBar.style.width = progress + '%';
+        loadingPercentage.textContent = Math.floor(progress) + '%';
+    }, 100);
 });
 
+// Section Popup Notification
+const sectionPopup = document.getElementById('section-popup');
+let popupTimeout;
 
-const backToTopButton = document.getElementById("back-to-top");
+const showSectionPopup = (sectionName) => {
+    clearTimeout(popupTimeout);
+    sectionPopup.textContent = sectionName;
+    sectionPopup.classList.add('show');
 
-backToTopButton.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "auto",
-  });
-});
-
-// document.addEventListener('DOMContentLoaded', function() {
-//     var hiddenElements = document.querySelectorAll('.hidden');
-  
-//     function fadeIn() {
-//       hiddenElements.forEach(function(element) {
-//         if (isElementInViewport(element)) {
-//           element.classList.add('fade-in');
-//         }
-//       });
-//     }
-  
-//     function isElementInViewport(el) {
-//         var rect = el.getBoundingClientRect();
-//         return (
-//           rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
-//           rect.bottom >= 0 &&
-//           rect.left <= (window.innerWidth || document.documentElement.clientWidth) &&
-//           rect.right >= 0
-//         );
-//     }
-    
-//     window.addEventListener('scroll', fadeIn);
-//     window.addEventListener('resize', fadeIn); // For responsiveness
-// });
-
-function handleLabelClick(id, num, component, card, section) {
-    var tab = document.getElementById(id);
-    var glider = document.querySelector(`#${component} .glider`);
-    var projectList = document.querySelectorAll(`#${component} .${card}`);
-
-    glider.style.transform = 'translateX(' + 100 * num + '%)';
-
-    if(id == "all"){
-        projectList.forEach(function(project) {
-            project.style.display = '';
-        });
-
-        var parentElement = document.getElementById(component);
-
-        var middleGradient = document.createElement("div");
-        middleGradient.classList.add("middle-gradient");
-
-        var endGradient = document.createElement("div");
-        endGradient.classList.add("end-gradient");
-
-        if (parentElement.getElementsByClassName("middle-gradient")[0] === undefined) {
-            parentElement.appendChild(middleGradient);
-        }
-        if (parentElement.getElementsByClassName("end-gradient")[0] === undefined) {
-            parentElement.appendChild(endGradient);
-        }
-    } else {
-        projectList.forEach(function(project) {
-            var decision = project.querySelector(`.${section}`);
-
-            if (decision && decision.classList.contains(id)) {
-                project.style.display = '';
-            } else {
-                project.style.display = 'none';
-            }
-        });
-
-        var childElements = document.getElementById(component).children;
-
-        for (var i = 0; i < childElements.length; i++) {
-            var childElement = childElements[i];
-
-            if (childElement.classList.contains("middle-gradient")) {
-                childElement.classList.remove("middle-gradient");
-            }
-            if (childElement.classList.contains("end-gradient")) {
-                childElement.classList.remove("end-gradient");
-            }
-        }
-    }
-
-    // Reset and reinitialize load more after filter change
-    if (loadMoreState[component]) {
-        loadMoreState[component].currentFilter = id;
-        applyLoadMoreState(component, card);
-    }
-}
-
-// Handle Dropdown change for small screens
-function handleResearchDropdownChange(event) {
-    const selectedTab = event.target.value;
-    const num = {
-        "all": 0,
-        "published": 1,
-        "accepted": 2,
-        "awaiting": 3
-    }[selectedTab] || 0;
-    
-    // Trigger the tab click logic
-    handleLabelClick(selectedTab, num, 'research', 'research-card', 'project-decision');
-}
-
-function handleAchievementDropdownChange(event) {
-    const selectedTab = event.target.value;
-    const num = {
-        "all": 0,
-        "competition": 1,
-        "award": 2,
-        "others": 3
-    }[selectedTab] || 0;
-    
-    // Trigger the tab click logic
-    handleLabelClick(selectedTab, num, 'achievement', 'achievement-card', 'achievement-type');
-}
-
-function handleWorkDropdownChange(event) {
-    const selectedTab = event.target.value;
-    const num = {
-        "all": 0,
-        "rapidapi": 1,
-        "figma": 2,
-        "githubcontribution": 3
-    }[selectedTab] || 0;
-
-    // Trigger the tab click logic
-    handleLabelClick(selectedTab, num, 'work', 'work-card', 'work-type');
-}
-
-// Store load more state for each section
-const loadMoreState = {
-    research: { itemsPerPage: 4, currentFilter: 'all' },
-    achievement: { itemsPerPage: 6, currentFilter: 'all' },
-    work: { itemsPerPage: 8, currentFilter: 'all' }
+    popupTimeout = setTimeout(() => {
+        sectionPopup.classList.remove('show');
+    }, 2000);
 };
 
-// Load More Functionality - Filter Aware
-function initializeLoadMore(sectionId, cardClass, itemsToShow = 6) {
-    const section = document.getElementById(sectionId);
-    if (!section) return;
-
-    const cards = section.querySelectorAll(`.${cardClass}`);
-    const loadMoreBtn = section.querySelector('.load-more-btn');
-
-    if (!loadMoreBtn) return;
-
-    // Store initial items to show
-    if (loadMoreState[sectionId]) {
-        loadMoreState[sectionId].itemsPerPage = itemsToShow;
-    }
-
-    // Apply initial load more state
-    applyLoadMoreState(sectionId, cardClass);
-
-    // Add click handler
-    loadMoreBtn.addEventListener('click', function() {
-        showMoreItems(sectionId, cardClass);
-    });
-}
-
-// Show more items based on current filter
-function showMoreItems(sectionId, cardClass) {
-    const section = document.getElementById(sectionId);
-    const loadMoreBtn = section.querySelector('.load-more-btn');
-    const state = loadMoreState[sectionId];
-
-    if (!state) {
-        // For sections without filters (like projects)
-        const cards = section.querySelectorAll(`.${cardClass}`);
-        const hiddenCards = Array.from(cards).filter(card => card.style.display === 'none');
-        const itemsToShow = 4; // default
-        const cardsToShow = hiddenCards.slice(0, itemsToShow);
-
-        cardsToShow.forEach(card => {
-            card.style.display = '';
-        });
-
-        const remainingHidden = hiddenCards.length - cardsToShow.length;
-        if (remainingHidden <= 0) {
-            loadMoreBtn.style.display = 'none';
-        } else {
-            loadMoreBtn.textContent = `Load More (${remainingHidden} remaining)`;
-        }
-        return;
-    }
-
-    // Get all cards
-    const cards = section.querySelectorAll(`.${cardClass}`);
-
-    // Filter cards based on current filter to get all matching cards
-    let matchingCards = Array.from(cards);
-    if (state.currentFilter !== 'all') {
-        matchingCards = matchingCards.filter(card => {
-            const filterElement = card.querySelector('.project-decision, .achievement-type, .work-type');
-            return filterElement && filterElement.classList.contains(state.currentFilter);
-        });
-    }
-
-    // Find currently hidden cards that match the filter
-    const hiddenMatchingCards = matchingCards.filter(card => card.style.display === 'none');
-    const cardsToShow = hiddenMatchingCards.slice(0, state.itemsPerPage);
-
-    // Show the next batch
-    cardsToShow.forEach(card => {
-        card.style.display = '';
-    });
-
-    // Update button
-    const remainingHidden = hiddenMatchingCards.length - cardsToShow.length;
-    if (remainingHidden <= 0) {
-        loadMoreBtn.style.display = 'none';
-    } else {
-        loadMoreBtn.textContent = `Load More (${remainingHidden} remaining)`;
-    }
-}
-
-// Apply load more state after filter change
-function applyLoadMoreState(sectionId, cardClass) {
-    const section = document.getElementById(sectionId);
-    const loadMoreBtn = section.querySelector('.load-more-btn');
-    const state = loadMoreState[sectionId];
-
-    if (!state) {
-        // For sections without filters
-        const cards = section.querySelectorAll(`.${cardClass}`);
-        const itemsToShow = 4;
-        cards.forEach((card, index) => {
-            if (index >= itemsToShow) {
-                card.style.display = 'none';
+// Intersection Observer for section popups
+const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio > 0.3) {
+            const sectionName = entry.target.dataset.sectionName;
+            if (sectionName) {
+                showSectionPopup(sectionName);
             }
-        });
+        }
+    });
+}, { threshold: 0.3 });
 
-        const hiddenCount = Math.max(0, cards.length - itemsToShow);
-        if (loadMoreBtn) {
-            if (hiddenCount > 0) {
-                loadMoreBtn.style.display = 'block';
-                loadMoreBtn.textContent = `Load More (${hiddenCount} remaining)`;
+document.querySelectorAll('section[data-section-name]').forEach(section => {
+    sectionObserver.observe(section);
+});
+
+// Profile Image Switcher with Glitch Effect
+const profileFrame = document.getElementById('profile-frame');
+const profileImg = document.getElementById('profile-img');
+const profileImgAlt = document.getElementById('profile-img-alt');
+const switchHint = document.getElementById('switch-hint');
+let isFirstImage = true;
+
+profileFrame.addEventListener('click', function() {
+    // Create glitch effect
+    const glitchDuration = 300;
+    const glitchSteps = 5;
+    let step = 0;
+
+    const glitchInterval = setInterval(() => {
+        if (step < glitchSteps) {
+            profileImg.style.transform = `translate(${Math.random() * 10 - 5}px, ${Math.random() * 10 - 5}px)`;
+            profileImg.style.filter = `hue-rotate(${Math.random() * 360}deg) saturate(${Math.random() * 2 + 1})`;
+            step++;
+        } else {
+            clearInterval(glitchInterval);
+            profileImg.style.transform = 'none';
+            profileImg.style.filter = 'grayscale(30%) contrast(1.1)';
+
+            // Switch images
+            if (isFirstImage) {
+                profileImg.src = 'assests/Myself2.jpg';
+                switchHint.textContent = 'MODE: TACTICAL';
             } else {
-                loadMoreBtn.style.display = 'none';
+                profileImg.src = 'assests/Myself.png';
+                switchHint.textContent = 'MODE: OPERATIVE';
             }
+            isFirstImage = !isFirstImage;
         }
-        return;
-    }
+    }, glitchDuration / glitchSteps);
+});
 
-    // Get all cards
-    const cards = section.querySelectorAll(`.${cardClass}`);
-
-    // Determine which cards match the current filter
-    let matchingCards = Array.from(cards);
-    if (state.currentFilter !== 'all') {
-        matchingCards = matchingCards.filter(card => {
-            const filterElement = card.querySelector('.project-decision, .achievement-type, .work-type');
-            return filterElement && filterElement.classList.contains(state.currentFilter);
-        });
-    }
-
-    // Show first N matching cards, hide the rest
-    matchingCards.forEach((card, index) => {
-        if (index < state.itemsPerPage) {
-            // Show this card (it matches filter and is within page limit)
-            card.style.display = '';
-        } else {
-            // Hide this card (beyond page limit)
-            card.style.display = 'none';
-        }
-    });
-
-    // Count how many matching cards are hidden
-    const hiddenCount = matchingCards.filter(card => card.style.display === 'none').length;
-
-    // Update load more button
-    if (loadMoreBtn) {
-        if (hiddenCount > 0) {
-            loadMoreBtn.style.display = 'block';
-            loadMoreBtn.textContent = `Load More (${hiddenCount} remaining)`;
-        } else {
-            loadMoreBtn.style.display = 'none';
-        }
-    }
-}
-
-// Special function for project section which has both odd and even cards
-function initializeProjectLoadMore(itemsToShow = 4) {
-    const section = document.getElementById('project');
-    const oddCards = section.querySelectorAll('.project-card-odd');
-    const evenCards = section.querySelectorAll('.project-card-even');
-    const allCards = [...oddCards, ...evenCards];
-    const loadMoreBtn = section.querySelector('.load-more-btn');
-
-    let currentItems = itemsToShow;
-
-    // Initially hide items beyond itemsToShow
-    allCards.forEach((card, index) => {
-        if (index >= itemsToShow) {
-            card.style.display = 'none';
-        }
-    });
-
-    // Hide button if all items are already visible
-    if (allCards.length <= itemsToShow) {
-        if (loadMoreBtn) loadMoreBtn.style.display = 'none';
-    }
-
-    if (loadMoreBtn) {
-        loadMoreBtn.addEventListener('click', function() {
-            const hiddenCards = allCards.filter(card => card.style.display === 'none');
-            const cardsToShow = hiddenCards.slice(0, itemsToShow);
-
-            cardsToShow.forEach(card => {
-                card.style.display = '';
+// Smooth scrolling
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
             });
+        }
+    });
+});
 
-            currentItems += cardsToShow.length;
+// Intersection Observer for animations
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
 
-            // Hide button if all items are now visible
-            if (currentItems >= allCards.length) {
-                loadMoreBtn.style.display = 'none';
-            }
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
 
-            // Update button text with remaining items
-            const remaining = allCards.length - currentItems;
-            if (remaining > 0) {
-                loadMoreBtn.textContent = `Load More (${remaining} remaining)`;
-            }
-        });
+// Observe all cards and sections
+document.querySelectorAll('.stats-card, .achievement-item, .experience-card, .project-card:not(.hidden-project), .skill-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+});
+
+// Parallax effect for hero grid
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const heroGrid = document.querySelector('.hero-grid');
+    if (heroGrid) {
+        heroGrid.style.transform = `perspective(500px) rotateX(60deg) translateY(${scrolled * 0.1}px)`;
     }
-}
+});
 
-// Initialize load more for all sections when page loads
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize sections with filters
-    initializeLoadMore('research', 'research-card', 4);
-    initializeLoadMore('achievement', 'achievement-card', 6);
-    initializeLoadMore('work', 'work-card', 8);
+// Stats counter animation
+const statsNumbers = document.querySelectorAll('.stats-card-number');
+const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const target = entry.target;
+            const finalValue = parseFloat(target.textContent);
+            let current = 0;
+            const increment = finalValue / 50;
+            const isDecimal = target.textContent.includes('.');
 
-    // Initialize project section (no filters)
-    initializeProjectLoadMore(4);
+            const counter = setInterval(() => {
+                current += increment;
+                if (current >= finalValue) {
+                    target.textContent = isDecimal ? finalValue.toFixed(2) : Math.floor(finalValue);
+                    clearInterval(counter);
+                } else {
+                    target.textContent = isDecimal ? current.toFixed(2) : Math.floor(current);
+                }
+            }, 30);
+
+            statsObserver.unobserve(target);
+        }
+    });
+}, { threshold: 0.5 });
+
+statsNumbers.forEach(num => statsObserver.observe(num));
+
+// Horizontal scroll for roadmap
+const roadmapContainer = document.querySelector('.roadmap-container');
+let isDown = false;
+let startX;
+let scrollLeft;
+
+roadmapContainer.addEventListener('mousedown', (e) => {
+    isDown = true;
+    startX = e.pageX - roadmapContainer.offsetLeft;
+    scrollLeft = roadmapContainer.scrollLeft;
+});
+
+roadmapContainer.addEventListener('mouseleave', () => {
+    isDown = false;
+});
+
+roadmapContainer.addEventListener('mouseup', () => {
+    isDown = false;
+});
+
+roadmapContainer.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - roadmapContainer.offsetLeft;
+    const walk = (x - startX) * 2;
+    roadmapContainer.scrollLeft = scrollLeft - walk;
+});
+
+// Keyboard navigation for accessibility
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') {
+        roadmapContainer.scrollLeft += 100;
+    } else if (e.key === 'ArrowLeft') {
+        roadmapContainer.scrollLeft -= 100;
+    }
+});
+
+// Cursor effect
+document.addEventListener('mousemove', (e) => {
+    const cursor = document.createElement('div');
+    cursor.className = 'cursor-trail';
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+    document.body.appendChild(cursor);
+
+    setTimeout(() => {
+        cursor.remove();
+    }, 500);
+});
+
+// Random glitch effect on hero name
+const heroName = document.querySelector('.hero-name');
+setInterval(() => {
+    if (Math.random() > 0.95) {
+        heroName.style.animation = 'glitch 0.3s ease';
+        setTimeout(() => {
+            heroName.style.animation = 'none';
+        }, 300);
+    }
+}, 2000);
+
+// Load More Projects
+const loadMoreBtn = document.getElementById('load-more-projects');
+const hiddenProjects = document.querySelectorAll('.hidden-project');
+let projectsShown = false;
+
+loadMoreBtn.addEventListener('click', () => {
+    hiddenProjects.forEach(project => {
+        project.classList.remove('hidden-project');
+        project.style.opacity = '0';
+        project.style.transform = 'translateY(30px)';
+        project.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+
+        setTimeout(() => {
+            project.style.opacity = '1';
+            project.style.transform = 'translateY(0)';
+        }, 100);
+    });
+    loadMoreBtn.classList.add('hidden');
+});
+
+// Skill items hover effect
+document.querySelectorAll('.skill-item').forEach(item => {
+    item.addEventListener('mouseenter', () => {
+        item.style.transform = 'translateY(-3px) scale(1.02)';
+    });
+    item.addEventListener('mouseleave', () => {
+        item.style.transform = 'translateY(0) scale(1)';
+    });
+});
+
+// Year Load More Buttons for Achievements
+document.querySelectorAll('.year-load-more').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const year = btn.dataset.year;
+        const yearSection = document.querySelector(`.year-section[data-year="${year}"]`);
+        const hiddenItems = yearSection.querySelectorAll('.hidden-achievement');
+
+        hiddenItems.forEach(item => {
+            item.classList.remove('hidden-achievement');
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(20px)';
+            item.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+
+            setTimeout(() => {
+                item.style.opacity = '1';
+                item.style.transform = 'translateY(0)';
+            }, 50);
+        });
+
+        btn.classList.add('hidden');
+    });
+});
+
+// Mobile Menu Toggle
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const navLinks = document.getElementById('nav-links');
+
+mobileMenuBtn.addEventListener('click', () => {
+    mobileMenuBtn.classList.toggle('active');
+    navLinks.classList.toggle('active');
+});
+
+// Close mobile menu when clicking a link
+navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenuBtn.classList.remove('active');
+        navLinks.classList.remove('active');
+    });
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        mobileMenuBtn.classList.remove('active');
+        navLinks.classList.remove('active');
+    }
 });
