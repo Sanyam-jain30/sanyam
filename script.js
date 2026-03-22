@@ -74,10 +74,10 @@ profileFrame.addEventListener('click', function() {
 
             // Switch images
             if (isFirstImage) {
-                profileImg.src = 'assests/Myself2.jpg';
+                profileImg.src = 'assests/Myself.png';
                 switchHint.textContent = 'MODE: TACTICAL';
             } else {
-                profileImg.src = 'assests/Myself.png';
+                profileImg.src = 'assests/Myself2.jpg';
                 switchHint.textContent = 'MODE: OPERATIVE';
             }
             isFirstImage = !isFirstImage;
