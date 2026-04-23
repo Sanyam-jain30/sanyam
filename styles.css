@@ -739,6 +739,77 @@ nav {
     letter-spacing: 1px;
 }
 
+.social-link-menu {
+    overflow: visible;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    position: relative;
+}
+
+.social-link-menu summary {
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    color: inherit;
+}
+
+.social-link-menu summary::-webkit-details-marker {
+    display: none;
+}
+
+.github-multi-count {
+    position: absolute;
+    top: 3px;
+    right: 4px;
+    font-size: 0.55rem;
+    font-family: 'Orbitron', sans-serif;
+    color: var(--accent);
+}
+
+.social-menu {
+    position: absolute;
+    top: 58px;
+    left: 0;
+    min-width: 180px;
+    background: var(--card-bg);
+    border: 1px solid rgba(0, 240, 255, 0.4);
+    box-shadow: var(--glow-primary);
+    z-index: 20;
+}
+
+.social-link-menu[open] .social-link {
+    background: rgba(0, 240, 255, 0.2);
+    border-color: var(--primary);
+    box-shadow: var(--glow-primary);
+    color: var(--primary);
+}
+
+.social-menu a {
+    display: block;
+    padding: 10px 12px;
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.75rem;
+    border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+}
+
+.social-menu a:last-child {
+    border-bottom: 0;
+}
+
+.social-menu a:hover {
+    background: rgba(0, 240, 255, 0.1);
+    color: var(--primary);
+}
+
 @keyframes resumePulse {
     0%, 100% { box-shadow: 0 0 5px rgba(57, 255, 20, 0.3); }
     50% { box-shadow: 0 0 20px rgba(57, 255, 20, 0.6); }
@@ -1134,6 +1205,19 @@ section {
     color: rgba(255, 255, 255, 0.5);
 }
 
+.achievement-proof {
+    display: inline-block;
+    margin-top: 8px;
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-family: 'Share Tech Mono', monospace;
+    color: var(--primary);
+}
+
+.achievement-proof:hover {
+    color: var(--accent);
+}
+
 .scroll-indicator {
     display: flex;
     align-items: center;
@@ -1276,6 +1360,58 @@ section {
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.5);
     line-height: 1.6;
+}
+
+.experience-links {
+    margin-top: 14px;
+}
+
+.proof-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--primary);
+}
+
+.proof-link:hover {
+    color: var(--accent);
+}
+
+.stats-card-detail-links {
+    margin-top: 10px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.stats-card-detail-links a {
+    color: var(--primary);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.72rem;
+    text-decoration: none;
+    width: 100%;
+}
+
+.stats-card-detail-links a:hover {
+    color: var(--accent);
+}
+
+.cert-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.link-group-title {
+    width: 100%;
+    margin-top: 8px;
+    color: var(--secondary);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 /* Skills Section */

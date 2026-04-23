@@ -225,20 +225,22 @@ const loadMoreBtn = document.getElementById('load-more-projects');
 const hiddenProjects = document.querySelectorAll('.hidden-project');
 let projectsShown = false;
 
-loadMoreBtn.addEventListener('click', () => {
-    hiddenProjects.forEach(project => {
-        project.classList.remove('hidden-project');
-        project.style.opacity = '0';
-        project.style.transform = 'translateY(30px)';
-        project.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+if (loadMoreBtn) {
+    loadMoreBtn.addEventListener('click', () => {
+        hiddenProjects.forEach(project => {
+            project.classList.remove('hidden-project');
+            project.style.opacity = '0';
+            project.style.transform = 'translateY(30px)';
+            project.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
 
-        setTimeout(() => {
-            project.style.opacity = '1';
-            project.style.transform = 'translateY(0)';
-        }, 100);
+            setTimeout(() => {
+                project.style.opacity = '1';
+                project.style.transform = 'translateY(0)';
+            }, 100);
+        });
+        loadMoreBtn.classList.add('hidden');
     });
-    loadMoreBtn.classList.add('hidden');
-});
+}
 
 // Skill items hover effect
 document.querySelectorAll('.skill-item').forEach(item => {
